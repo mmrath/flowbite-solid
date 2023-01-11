@@ -1,0 +1,65 @@
+{
+  "name": "flowbite-solid",
+  "version": "0.0.1",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "author": {
+    "name": "Murali Mohan Rath",
+    "email": "murali@mmrath.com",
+    "url": "https://github.com/mmrath"
+  },
+  "bugs": {
+    "url": "https://github.com/mmrath/flowbite-solid/issues"
+  },
+  "repository": {
+    "url": "https://github.com/mmrath/flowbite-solid",
+    "type": "git"
+  },
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://github.com/mmrath/flowbite-solid",
+  "scripts": {
+    "build:lib": "rimraf lib && pnpm build:lib:esm && pnpm build:lib:cjs",
+    "build:lib:cjs": "tsc -p tsconfig.lib.json",
+    "build:lib:esm": "tsc -p tsconfig.lib.json --module esnext --declaration --outDir lib/esm"
+  },
+  "dependencies": {
+    "clsx": "^1.2.1"
+  },
+  "peerDependencies": {
+    "flowbite": "^1",
+    "solid-js": "^1.6.0",
+    "tailwindcss": "^3"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "vite": "^3.1.8",
+    "vitest": "^0.24.3",
+    "typescript": "^4.9.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "solid-js",
+    "design-system",
+    "tailwind",
+    "tailwindcss",
+    "flowbite",
+    "flowbite-solid",
+    "flowbite-solid-components"
+  ]
+}
