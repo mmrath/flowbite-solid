@@ -1,15 +1,15 @@
 import classNames from 'clsx';
 
-//import { Children, cloneElement, useMemo } from 'react';
 import type {ButtonProps} from './Button';
-import {useTheme} from '../Flowbite/ThemeContext';
-import {children, ComponentProps, createEffect, JSX, ParentProps, splitProps} from "solid-js";
-import {spread} from "solid-js/web";
+import {useTheme} from '../Flowbite';
+import {ComponentProps, JSX, ParentProps, splitProps} from "solid-js";
 
 export interface FlowbiteButtonGroupTheme {
     base: string;
     position: PositionInButtonGroup;
 }
+
+export type PositionInButtonGroupKeys = keyof PositionInButtonGroup;
 
 export interface PositionInButtonGroup {
     none: string;

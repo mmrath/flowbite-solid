@@ -7,7 +7,7 @@ import type {
     FlowbiteSizes,
 } from '../Flowbite/FlowbiteTheme';
 import {useTheme} from '../Flowbite/ThemeContext';
-import type {PositionInButtonGroup} from './ButtonGroup';
+import type {PositionInButtonGroup, PositionInButtonGroupKeys} from './ButtonGroup';
 import ButtonGroup from './ButtonGroup';
 import {ComponentProps, createMemo, JSX, mergeProps, splitProps} from "solid-js";
 import {Dynamic} from "solid-js/web";
@@ -63,7 +63,7 @@ export interface ButtonProps extends Omit<ComponentProps<'button'>, 'color'> {
     outline?: boolean;
     fullSized?: boolean;
     pill?: boolean;
-    positionInGroup?: keyof PositionInButtonGroup;
+    positionInGroup?: PositionInButtonGroupKeys;
     size?: keyof ButtonSizes;
 }
 
@@ -99,7 +99,7 @@ const ButtonComponent = (p: ButtonProps) => {
                      !props.gradientDuoTone && !props.gradientMonochrome && theme().color[props.color],
                      props.gradientDuoTone && !props.gradientMonochrome && theme().gradientDuoTone[props.gradientDuoTone],
                      !props.gradientDuoTone && props.gradientMonochrome && theme().gradient[props.gradientMonochrome],
-                     props.positionInGroup && groupTheme().position[props.positionInGroup],
+                     props.positionInGroup && groupTheme().position[props.positionInGroup as keyof PositionInButtonGroup ],
                      props.outline && (theme().outline.color[props.color] ?? theme().outline.color.default),
                      theme().base,
                      theme().pill[props.pill ? 'on' : 'off'],
@@ -114,7 +114,7 @@ const ButtonComponent = (p: ButtonProps) => {
         >
         <span
             class={classNames(
-                theme().inner.base, theme().inner.position[props.positionInGroup],
+                theme().inner.base, theme().inner.position[props.positionInGroup as keyof PositionInButtonGroup],
                 theme().outline[props.outline ? 'on' : 'off'],
                 theme().outline.pill[props.outline && props.pill ? 'on' : 'off'],
                 theme().size[props.size],

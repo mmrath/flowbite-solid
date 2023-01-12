@@ -1,7 +1,7 @@
-import { render } from '@solidjs/testing-library';
-import { HiSolidEye } from 'solid-icons/hi';
-import { describe, expect, it } from 'vitest';
-import { TextInput } from './TextInput';
+import {render} from '@solidjs/testing-library';
+import {HiSolidEye} from 'solid-icons/hi';
+import {describe, expect, it} from 'vitest';
+import {TextInput} from './TextInput';
 import {Flowbite} from "../Flowbite";
 
 describe.concurrent('Components / Text input', () => {

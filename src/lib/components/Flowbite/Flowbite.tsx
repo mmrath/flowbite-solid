@@ -1,10 +1,9 @@
-
-import type { DeepPartial } from '..';
-import { mergeDeep } from '../../helpers/mergeDeep';
+import type {DeepPartial} from '..';
+import {mergeDeep} from '../../helpers/mergeDeep';
 import windowExists from '../../helpers/window-exists';
 import defaultTheme from '../../theme/default';
-import type { FlowbiteTheme } from './FlowbiteTheme';
-import {ThemeContext, ThemeProvider, useThemeMode} from './ThemeContext';
+import type {FlowbiteTheme} from './FlowbiteTheme';
+import {ThemeProvider, useThemeMode} from './ThemeContext';
 import {createEffect, createMemo, JSX, mergeProps, splitProps} from "solid-js";
 
 export interface ThemeProps {
