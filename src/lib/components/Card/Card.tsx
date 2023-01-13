@@ -4,6 +4,11 @@ import {Dynamic} from "solid-js/web";
 import clsx from "clsx";
 
 export interface FlowbiteCardTheme {
+    root: FlowbiteCardRootTheme;
+    img: FlowbiteCardImageTheme;
+}
+
+export interface FlowbiteCardRootTheme {
     base: string;
     children: string;
     horizontal: {
@@ -11,15 +16,16 @@ export interface FlowbiteCardTheme {
         on: string;
     };
     href: string;
-    img: {
-        base: string;
-        horizontal: {
-            off: string;
-            on: string;
-        };
-    };
     title:string;
     body:string;
+}
+
+export interface FlowbiteCardImageTheme {
+    base: string;
+    horizontal: {
+        off: string;
+        on: string;
+    };
 }
 
 export interface CardProps extends ParentProps<ComponentProps<'div'>> {
@@ -35,7 +41,7 @@ export const CardComponent = (p: CardProps): JSX.Element => {
 
     return (
         <Dynamic component={typeof local.href === 'undefined' ? 'div' : 'a'}
-                 class={clsx(theme.base, theme.horizontal[local.horizontal ? 'on' : 'off'], local.href && theme.href, local.class)}
+                 class={clsx(theme.root.base, theme.root.horizontal[local.horizontal ? 'on' : 'off'], local.href && theme.root.href, local.class)}
                  data-testid="flowbite-card"
                  href={local.href}
                  {...theirProps}
@@ -47,7 +53,7 @@ export const CardComponent = (p: CardProps): JSX.Element => {
                     src={local.imgSrc}
                 />
             )}
-            <div class={theme.children}>{local.children}</div>
+            <div class={theme.root.children}>{local.children}</div>
         </Dynamic>
     );
 };
@@ -58,7 +64,7 @@ const Title: Component<TitleProps> = (props: TitleProps) => {
     const [local, rest] = splitProps(props, ["children", "class"]);
 
     return (
-        <h5 class={clsx(theme.title, local.class)} {...rest}>{local.children}</h5>
+        <h5 class={clsx(theme.root.title, local.class)} {...rest}>{local.children}</h5>
     );
 };
 
@@ -68,7 +74,7 @@ const Body: Component<DivProps> = (props: DivProps) => {
     const [local, rest] = splitProps(props, ["children", "class"]);
     const theme = useTheme().theme.card;
     return (
-        <div class={clsx(theme.body, local.class)} {...rest}>{local.children}</div>
+        <div class={clsx(theme.root.body, local.class)} {...rest}>{local.children}</div>
     );
 };
 export const Card = Object.assign(CardComponent, {
