@@ -3,11 +3,12 @@ import {FlowbiteButtonGroupTheme, FlowbiteButtonTheme} from "../Button";
 import {FlowbiteCardTheme} from "../Card";
 import {FlowbiteTextInputTheme} from "../TextInput";
 import {FlowbiteHelperTextTheme} from "../HelperText";
+import {FlowbiteAccordionTheme} from "../Accordion";
 
 export type CustomFlowbiteTheme = DeepPartial<FlowbiteTheme>;
 
 export interface FlowbiteTheme extends Record<string, unknown> {
-  // accordion: FlowbiteAccordionTheme;
+  accordion: FlowbiteAccordionTheme;
   // alert: FlowbiteAlertTheme;
   // avatar: FlowbiteAvatarTheme;
   // avatarGroupCounter: FlowbiteAvatarGroupCounterTheme;

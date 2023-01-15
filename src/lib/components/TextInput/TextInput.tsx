@@ -2,7 +2,7 @@ import classNames from 'clsx';
 import {DeepPartial} from '..';
 import {mergeDeep} from '../../helpers/mergeDeep';
 import type {FlowbiteBoolean, FlowbiteColors, FlowbiteSizes} from '../Flowbite/FlowbiteTheme';
-import {useTheme} from '../Flowbite/ThemeContext';
+import {useTheme} from '../Flowbite';
 import {HelperText} from '../HelperText';
 import {Component, ComponentProps, createMemo, JSX, mergeProps, splitProps} from "solid-js";
 import {Dynamic} from "solid-js/web";
