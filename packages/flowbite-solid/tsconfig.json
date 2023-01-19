@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "src"
+  ],
+  "exclude": ["dist", "build",
+    "node_modules"
+  ],
+  "types": ["vite/client", "@testing-library/jest-dom"]
+}
