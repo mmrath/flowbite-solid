@@ -13,11 +13,10 @@ export interface CheckboxProps extends Omit<ComponentProps<'input'>, 'type'> {
 }
 
 export const Checkbox = (p: CheckboxProps) => {
-        const defaultProps = {theme: {}}
-        const [local, props] = splitProps(mergeProps(defaultProps, p),
-            ["class", "theme", "ref"]);
+    const defaultProps = {theme: {}}
+    const [local, props] = splitProps(mergeProps(defaultProps, p),
+        ["class", "theme", "ref"]);
+    const theme = createMemo(() => mergeDeep(useTheme().theme.textInput, local.theme));
 
-        const theme = createMemo(() => mergeDeep(useTheme().theme.textInput, local.theme));
-
-        return <input ref={local.ref} class={classNames(theme().base, local.class)} type="checkbox" {...props} />;
-    };
+    return <input ref={local.ref} class={classNames(theme().base, local.class)} type="checkbox" {...props} />;
+};
