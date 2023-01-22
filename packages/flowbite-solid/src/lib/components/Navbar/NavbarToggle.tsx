@@ -18,7 +18,6 @@ export interface NavbarToggleProps extends ComponentProps<'button'> {
 }
 
 export const NavbarToggle: Component<NavbarToggleProps> = (p) => {
-
   const ctx = useNavbarContext();
   const defaultProps = {theme:{}, barIcon: GoThreeBars};
   const [local, props] = splitProps(mergeProps(defaultProps, p), ["class", "theme", "barIcon"]);

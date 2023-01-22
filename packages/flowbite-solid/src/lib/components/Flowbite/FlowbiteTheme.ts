@@ -19,6 +19,7 @@ import {FlowbiteToastTheme} from "../Toast";
 import {FlowbiteListGroupTheme} from "../ListGroup";
 import {FlowbiteFooterTheme} from "../Footer";
 import {FlowbiteNavbarTheme} from "../Navbar";
+import {FlowbitePaginationTheme} from "../Pagination";
 
 export type CustomFlowbiteTheme = DeepPartial<FlowbiteTheme>;
 
@@ -40,7 +41,7 @@ export interface FlowbiteTheme extends Record<string, unknown> {
   // modal: FlowbiteModalTheme;
   navbar: FlowbiteNavbarTheme;
   // rating: FlowbiteRatingTheme;
-  // pagination: FlowbitePaginationTheme;
+  pagination: FlowbitePaginationTheme;
   // sidebar: FlowbiteSidebarTheme;
   // progress: FlowbiteProgressTheme;
   // spinner: FlowbiteSpinnerTheme;
