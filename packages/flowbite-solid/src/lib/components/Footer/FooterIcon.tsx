@@ -13,10 +13,11 @@ export interface FooterIconProps extends ParentProps<ComponentProps<'a'>> {
 export const FooterIcon: Component<FooterIconProps> = (p) => {
     const theme = useTheme().theme.footer.icon;
     const [local, _] = splitProps(p, ["class", "icon", "href", "ariaLabel"]);
+
     return (
         <div>
             <Show when={local.href} fallback={
-                <Dynamic component={local.icon} class={theme.size}/>
+                <Dynamic component={local.icon} data-testid="flowbite-footer-icon" class={theme.size}/>
             }>
                 <a aria-label={local.ariaLabel}
                     data-testid="flowbite-footer-icon"
