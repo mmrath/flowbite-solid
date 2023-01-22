@@ -18,6 +18,7 @@ import {FlowbiteToggleSwitchTheme} from "../ToggleSwitch";
 import {FlowbiteToastTheme} from "../Toast";
 import {FlowbiteListGroupTheme} from "../ListGroup";
 import {FlowbiteFooterTheme} from "../Footer";
+import {FlowbiteNavbarTheme} from "../Navbar";
 
 export type CustomFlowbiteTheme = DeepPartial<FlowbiteTheme>;
 
@@ -37,7 +38,7 @@ export interface FlowbiteTheme extends Record<string, unknown> {
   footer: FlowbiteFooterTheme;
   listGroup: FlowbiteListGroupTheme;
   // modal: FlowbiteModalTheme;
-  // navbar: FlowbiteNavbarTheme;
+  navbar: FlowbiteNavbarTheme;
   // rating: FlowbiteRatingTheme;
   // pagination: FlowbitePaginationTheme;
   // sidebar: FlowbiteSidebarTheme;
