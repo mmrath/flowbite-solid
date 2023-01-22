@@ -200,7 +200,7 @@ describe('Components / Footer', () => {
         render(()=>
           <Flowbite theme={{ theme }}>
             <Footer>
-              <Footer.Icon ariaLabel="Icon" href="/" icon={BsFacebook} />
+              <Footer.Icon aria-label="Icon" href="/" icon={BsFacebook} />
             </Footer>
           </Flowbite>,
         );

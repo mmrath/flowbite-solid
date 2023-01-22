@@ -69,7 +69,7 @@ describe('Components / Toggle switch', () => {
 
         return (
           <ToggleSwitch
-            checked={state}
+            checked={state()}
             label="Enable notifications"
             name="notifications"
             onChange={(value) => {

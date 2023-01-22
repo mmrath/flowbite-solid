@@ -15,6 +15,9 @@ import {FlowbiteRadioTheme} from "../Radio";
 import {FlowbiteSelectTheme} from "../Select";
 import {FlowbiteTextareaTheme} from "../Textarea";
 import {FlowbiteToggleSwitchTheme} from "../ToggleSwitch";
+import {FlowbiteToastTheme} from "../Toast";
+import {FlowbiteListGroupTheme} from "../ListGroup";
+import {FlowbiteFooterTheme} from "../Footer";
 
 export type CustomFlowbiteTheme = DeepPartial<FlowbiteTheme>;
 
@@ -32,7 +35,7 @@ export interface FlowbiteTheme extends Record<string, unknown> {
   // carousel: FlowbiteCarouselTheme;
   // darkThemeToggle: FlowbiteDarkThemeToggleTheme;
   footer: FlowbiteFooterTheme;
-  // listGroup: FlowbiteListGroupTheme;
+  listGroup: FlowbiteListGroupTheme;
   // modal: FlowbiteModalTheme;
   // navbar: FlowbiteNavbarTheme;
   // rating: FlowbiteRatingTheme;
@@ -41,7 +44,7 @@ export interface FlowbiteTheme extends Record<string, unknown> {
   // progress: FlowbiteProgressTheme;
   // spinner: FlowbiteSpinnerTheme;
   // tab: FlowbiteTabTheme;
-  // toast: FlowbiteToastTheme;
+  toast: FlowbiteToastTheme;
   // tooltip: FlowbiteTooltipTheme;
   // dropdown: FlowbiteDropdownTheme;
   checkbox: FlowbiteCheckboxTheme;
