@@ -20,6 +20,8 @@ import {FlowbiteListGroupTheme} from "../ListGroup";
 import {FlowbiteFooterTheme} from "../Footer";
 import {FlowbiteNavbarTheme} from "../Navbar";
 import {FlowbitePaginationTheme} from "../Pagination";
+import {FlowbiteSidebarTheme} from "../Sidebar";
+import {FlowbiteTooltipTheme} from "../Tooltip";
 
 export type CustomFlowbiteTheme = DeepPartial<FlowbiteTheme>;
 
@@ -42,12 +44,12 @@ export interface FlowbiteTheme extends Record<string, unknown> {
   navbar: FlowbiteNavbarTheme;
   // rating: FlowbiteRatingTheme;
   pagination: FlowbitePaginationTheme;
-  // sidebar: FlowbiteSidebarTheme;
+  sidebar: FlowbiteSidebarTheme;
   // progress: FlowbiteProgressTheme;
   // spinner: FlowbiteSpinnerTheme;
   // tab: FlowbiteTabTheme;
   toast: FlowbiteToastTheme;
-  // tooltip: FlowbiteTooltipTheme;
+  tooltip: FlowbiteTooltipTheme;
   // dropdown: FlowbiteDropdownTheme;
   checkbox: FlowbiteCheckboxTheme;
   fileInput: FlowbiteFileInputTheme;

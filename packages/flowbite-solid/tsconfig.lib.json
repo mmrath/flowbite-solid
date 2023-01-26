@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "outDir": "lib/cjs"
   },
-  "exclude": ["**/*.spec.tsx", "**/*.stories.tsx"],
+  "exclude": ["**/*.spec.tsx", "**/*.test.tsx", "**/*.test.ts","**/*.stories.tsx"],
   "include": [
     "src/lib"
   ]
