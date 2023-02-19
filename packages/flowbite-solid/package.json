@@ -1,6 +1,6 @@
 {
   "name": "flowbite-solid",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/lib/cjs/index.js",
   "module": "./dist/lib/esm/index.js",
   "types": "../dist/lib/esm/index.d.ts",

@@ -1,12 +1,12 @@
 
-> flowbite-solid@0.0.3 build /Users/murali/projects/flowbite-solid/packages/flowbite-solid
+> flowbite-solid@0.0.4 build /Users/murali/projects/flowbite-solid/packages/flowbite-solid
 > ./node_modules/.bin/rimraf lib && pnpm build:lib:esm && pnpm build:lib:cjs
 
 
-> flowbite-solid@0.0.3 build:lib:esm /Users/murali/projects/flowbite-solid/packages/flowbite-solid
+> flowbite-solid@0.0.4 build:lib:esm /Users/murali/projects/flowbite-solid/packages/flowbite-solid
 > ./node_modules/.bin/tsc -p tsconfig.lib.json --module esnext --declaration --outDir dist/lib/esm
 
 
-> flowbite-solid@0.0.3 build:lib:cjs /Users/murali/projects/flowbite-solid/packages/flowbite-solid
+> flowbite-solid@0.0.4 build:lib:cjs /Users/murali/projects/flowbite-solid/packages/flowbite-solid
 > ./node_modules/.bin/tsc -p tsconfig.lib.json
 

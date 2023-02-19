@@ -12,6 +12,8 @@ cypress/videos
 /build
 /lib
 
+turbo-build.log
+
 # misc
 dist
 .solid
