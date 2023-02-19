@@ -13,6 +13,8 @@ cypress/videos
 /lib
 
 # misc
+dist
+.solid
 .idea
 .DS_Store
 .env.local

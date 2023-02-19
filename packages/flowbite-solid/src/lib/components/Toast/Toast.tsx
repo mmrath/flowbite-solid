@@ -1,9 +1,17 @@
-import classNames from 'clsx';
-import {useTheme} from '../Flowbite';
-import type {Duration} from './ToastContext';
-import {ToastContext} from './ToastContext';
-import {ToastToggle} from './ToastToggle';
-import {Component, ComponentProps, createMemo, createSignal, mergeProps, ParentProps, splitProps} from "solid-js";
+import classNames from "clsx";
+import { useTheme } from "../Flowbite";
+import type { Duration } from "./ToastContext";
+import { ToastContext } from "./ToastContext";
+import { ToastToggle } from "./ToastToggle";
+import {
+  Component,
+  ComponentProps,
+  createMemo,
+  createSignal,
+  mergeProps,
+  ParentProps,
+  splitProps,
+} from "solid-js";
 
 export interface FlowbiteToastTheme {
   base: string;
@@ -15,30 +23,30 @@ export interface FlowbiteToastTheme {
   };
 }
 
-export interface ToastProps extends ParentProps<ComponentProps<'div'>> {
+export interface ToastProps extends ParentProps<ComponentProps<"div">> {
   duration?: Duration;
 }
 
 const durationClasses: Record<Duration, string> = {
-  75: 'duration-75',
-  100: 'duration-100',
-  150: 'duration-150',
-  200: 'duration-200',
-  300: 'duration-300',
-  500: 'duration-500',
-  700: 'duration-700',
-  1000: 'duration-1000',
+  75: "duration-75",
+  100: "duration-100",
+  150: "duration-150",
+  200: "duration-200",
+  300: "duration-300",
+  500: "duration-500",
+  700: "duration-700",
+  1000: "duration-1000",
 };
 
-const ToastComponent: Component<ToastProps> = (p) => {
-  const defaultProps = {duration:300 as Duration};
+const ToastComponent: Component<ToastProps> = p => {
+  const defaultProps = { duration: 300 as Duration };
   const [local, props] = splitProps(mergeProps(defaultProps, p), ["class", "children", "duration"]);
   const theme = createMemo(() => useTheme().theme.toast);
   const [isClosed, setIsClosed] = createSignal(false);
   const [isRemoved, setIsRemoved] = createSignal(false);
 
   const ctxValue = {
-    get duration(){
+    get duration() {
       return local.duration;
     },
     get isClosed() {
@@ -48,7 +56,7 @@ const ToastComponent: Component<ToastProps> = (p) => {
       return isRemoved();
     },
     setIsClosed: setIsClosed,
-    setIsRemoved: setIsRemoved
+    setIsRemoved: setIsRemoved,
   };
   return (
     <ToastContext.Provider value={ctxValue}>
@@ -59,7 +67,7 @@ const ToastComponent: Component<ToastProps> = (p) => {
           durationClasses[local.duration],
           { [theme().closed]: isClosed },
           { [theme().removed]: isRemoved },
-          local.class,
+          local.class
         )}
         {...props}
       >

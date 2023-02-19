@@ -1,22 +1,22 @@
-import { cleanup, render, screen } from '@solidjs/testing-library';
-import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'solid-icons/bs';
-import { describe, expect, it } from 'vitest';
-import { Flowbite } from '../Flowbite';
-import { Footer } from './Footer';
-import {Component} from "solid-js";
+import { cleanup, render, screen } from "@solidjs/testing-library";
+import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "solid-icons/bs";
+import { describe, expect, it } from "vitest";
+import { Flowbite } from "../Flowbite";
+import { Footer } from "./Footer";
+import { Component } from "solid-js";
 
-describe('Components / Footer', () => {
-  describe('Rendering', () => {
+describe("Components / Footer", () => {
+  describe("Rendering", () => {
     it('should render an `<a>` with an `<img>` on `Footer.Brand href=".."`', () => {
-      render(()=>
+      render(() => (
         <Footer>
           <Footer.Brand alt="Flowbite" href="https://flowbite.com" src="">
             Flowbite
           </Footer.Brand>
-        </Footer>,
-      );
-      const a = screen.getByTestId('flowbite-footer-brand');
-      const img = screen.getByAltText('Flowbite');
+        </Footer>
+      ));
+      const a = screen.getByTestId("flowbite-footer-brand");
+      const img = screen.getByAltText("Flowbite");
 
       expect(a).toBeInTheDocument();
       expect(a).toContainElement(img);
@@ -24,218 +24,218 @@ describe('Components / Footer', () => {
   });
 
   it('should render an `<img>` on `Footer.Brand src=".."`', () => {
-    render(()=>
+    render(() => (
       <Footer>
         <Footer.Brand alt="Flowbite" src="">
           Flowbite
         </Footer.Brand>
-      </Footer>,
-    );
-    const img = screen.getByAltText('Flowbite');
+      </Footer>
+    ));
+    const img = screen.getByAltText("Flowbite");
 
     expect(img).toBeInTheDocument();
   });
 
   it('should render an `<a>` on `Footer.Copyright href=".."`', () => {
-    render(()=>
+    render(() => (
       <Footer>
         <Footer.Copyright by="Flowbite" href="https://flowbite.com" year={2022}>
           Flowbite
         </Footer.Copyright>
-      </Footer>,
-    );
+      </Footer>
+    ));
 
-    expect(copyright()).toContainElement(screen.getByRole('link'));
+    expect(copyright()).toContainElement(screen.getByRole("link"));
   });
 
   it('should render an `<a>` on `Footer.Icon href=".."`', () => {
-    render(()=>
+    render(() => (
       <Footer>
         <Footer.Icon ariaLabel="Icon" href="/" icon={BsFacebook} />
-      </Footer>,
-    );
-    const iconLink = screen.getAllByRole('link')[0];
+      </Footer>
+    ));
+    const iconLink = screen.getAllByRole("link")[0];
 
     expect(iconLink).toContainElement(icon());
   });
 
-  describe('Theme', () => {
-    it('should use `base` classes', () => {
+  describe("Theme", () => {
+    it("should use `base` classes", () => {
       const theme = {
         footer: {
-          base: 'text-gray-100',
+          base: "text-gray-100",
         },
       };
-      render(()=>
+      render(() => (
         <Flowbite theme={{ theme }}>
           <TestFooter />
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
 
-      expect(footer()).toHaveClass('text-gray-100');
+      expect(footer()).toHaveClass("text-gray-100");
     });
 
-    it('should use `bgDark` classes', () => {
+    it("should use `bgDark` classes", () => {
       const theme = {
         footer: {
-          bgDark: 'text-gray-100',
+          bgDark: "text-gray-100",
         },
       };
-      render(()=>
+      render(() => (
         <Flowbite theme={{ theme }}>
           <TestFooter />
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
 
-      expect(footer()).toHaveClass('text-gray-100');
+      expect(footer()).toHaveClass("text-gray-100");
     });
 
-    it('should use `container` classes', () => {
+    it("should use `container` classes", () => {
       const theme = {
         footer: {
-          container: 'text-gray-100',
+          container: "text-gray-100",
         },
       };
-      render(()=>
+      render(() => (
         <Flowbite theme={{ theme }}>
           <TestFooter />
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
 
-      expect(footer()).toHaveClass('text-gray-100');
+      expect(footer()).toHaveClass("text-gray-100");
     });
 
-    describe('`Footer.Brand`', () => {
-      it('should use `brand` classes', () => {
+    describe("`Footer.Brand`", () => {
+      it("should use `brand` classes", () => {
         const theme = {
           footer: {
             brand: {
-              base: 'text-gray-100',
-              img: 'text-gray-200',
-              span: 'text-gray-300',
+              base: "text-gray-100",
+              img: "text-gray-200",
+              span: "text-gray-300",
             },
           },
         };
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer>
               <Footer.Brand alt="Flowbite" href="https://flowbite.com" src="">
                 Flowbite
               </Footer.Brand>
             </Footer>
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(brand()).toHaveClass('text-gray-100');
-        expect(screen.getByRole('img')).toHaveClass('text-gray-200');
+        expect(brand()).toHaveClass("text-gray-100");
+        expect(screen.getByRole("img")).toHaveClass("text-gray-200");
 
         cleanup();
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer>
               <Footer.Brand href="/" src="">
                 Flowbite
               </Footer.Brand>
             </Footer>
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(screen.getByTestId('flowbite-footer-brand-span')).toHaveClass('text-gray-300');
+        expect(screen.getByTestId("flowbite-footer-brand-span")).toHaveClass("text-gray-300");
       });
     });
 
-    describe('`Footer.Copyright`', () => {
-      it('should use `copyright` classes', () => {
+    describe("`Footer.Copyright`", () => {
+      it("should use `copyright` classes", () => {
         const theme = {
           footer: {
             copyright: {
-              base: 'text-gray-100',
-              href: 'text-gray-200',
-              span: 'text-gray-300',
+              base: "text-gray-100",
+              href: "text-gray-200",
+              span: "text-gray-300",
             },
           },
         };
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer>
               <Footer.Copyright by="Flowbite" year={2022}>
                 Test
               </Footer.Copyright>
             </Footer>
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(copyright()).toHaveClass('text-gray-100');
-        expect(screen.getByTestId('flowbite-footer-copyright-span')).toHaveClass('text-gray-300');
+        expect(copyright()).toHaveClass("text-gray-100");
+        expect(screen.getByTestId("flowbite-footer-copyright-span")).toHaveClass("text-gray-300");
 
         cleanup();
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer>
               <Footer.Copyright by="Flowbite" href="/" year={2022}>
                 Test
               </Footer.Copyright>
             </Footer>
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(screen.getByRole('link')).toHaveClass('text-gray-200');
+        expect(screen.getByRole("link")).toHaveClass("text-gray-200");
       });
     });
 
-    it('should use `divider` classes', () => {});
+    it("should use `divider` classes", () => {});
 
-    it('should use `groupLink` classes', () => {});
+    it("should use `groupLink` classes", () => {});
 
-    describe('`Footer.Icon`', () => {
-      it('should use `icon` classes', () => {
+    describe("`Footer.Icon`", () => {
+      it("should use `icon` classes", () => {
         const theme = {
           footer: {
             icon: {
-              base: 'text-gray-800',
-              size: 'text-gray-900',
+              base: "text-gray-800",
+              size: "text-gray-900",
             },
           },
         };
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer>
               <Footer.Icon aria-label="Icon" href="/" icon={BsFacebook} />
             </Footer>
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(icon()).toHaveClass('text-gray-800');
+        expect(icon()).toHaveClass("text-gray-800");
 
         cleanup();
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer>
               <Footer.Icon ariaLabel="Icon" icon={BsFacebook} />
             </Footer>
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(icon()).toHaveClass('text-gray-900');
+        expect(icon()).toHaveClass("text-gray-900");
       });
     });
 
-    describe('`Footer.Title`', () => {
-      it('should use `title` classes', () => {
+    describe("`Footer.Title`", () => {
+      it("should use `title` classes", () => {
         const theme = {
           footer: {
             title: {
-              base: 'text-gray-100',
+              base: "text-gray-100",
             },
           },
         };
-        render(()=>
+        render(() => (
           <Flowbite theme={{ theme }}>
             <Footer.Title title="Flowbite" />
-          </Flowbite>,
-        );
+          </Flowbite>
+        ));
 
-        expect(title()).toHaveClass('text-gray-100');
+        expect(title()).toHaveClass("text-gray-100");
       });
     });
   });
@@ -292,12 +292,12 @@ const TestFooter: Component = () => (
   </Footer>
 );
 
-const brand = () => screen.getByTestId('flowbite-footer-brand');
+const brand = () => screen.getByTestId("flowbite-footer-brand");
 
-const copyright = () => screen.getByTestId('flowbite-footer-copyright');
+const copyright = () => screen.getByTestId("flowbite-footer-copyright");
 
-const footer = () => screen.getByTestId('flowbite-footer');
+const footer = () => screen.getByTestId("flowbite-footer");
 
-const icon = () => screen.getByTestId('flowbite-footer-icon');
+const icon = () => screen.getByTestId("flowbite-footer-icon");
 
-const title = () => screen.getByTestId('flowbite-footer-title');
+const title = () => screen.getByTestId("flowbite-footer-title");

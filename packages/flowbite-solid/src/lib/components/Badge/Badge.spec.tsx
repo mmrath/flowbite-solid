@@ -1,86 +1,86 @@
-import { render, screen } from '@solidjs/testing-library';
-import { HiSolidCheck } from 'solid-icons/hi';
-import { describe, expect, it } from 'vitest';
-import { Flowbite } from '../Flowbite';
-import { Badge } from './Badge';
+import { render, screen } from "@solidjs/testing-library";
+import { HiSolidCheck } from "solid-icons/hi";
+import { describe, expect, it } from "vitest";
+import { Flowbite } from "../Flowbite";
+import { Badge } from "./Badge";
 
-describe('Components / Badge', () => {
-  describe('Rendering', () => {
+describe("Components / Badge", () => {
+  describe("Rendering", () => {
     it('should render an `<a>` given `href=".."`', () => {
-      render(()=>
+      render(() => (
         <Badge href="/" icon={HiSolidCheck}>
           A badge with a link
-        </Badge>,
-      );
+        </Badge>
+      ));
 
       expect(link()).toBeInTheDocument();
-      expect(link()).toHaveAttribute('href', '/');
+      expect(link()).toHaveAttribute("href", "/");
     });
   });
 
-  describe('Theme', () => {
-    it('should use custom colors', () => {
+  describe("Theme", () => {
+    it("should use custom colors", () => {
       const theme = {
         badge: {
           root: {
             color: {
               primary:
-                'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
+                "bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300",
             },
           },
         },
       };
-      render(()=>
+      render(() => (
         <Flowbite theme={{ theme }}>
           <Badge color="primary" href="/" icon={HiSolidCheck}>
             A badge
           </Badge>
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
 
       expect(badge()).toHaveClass(
-        'bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300',
+        "bg-blue-100 text-blue-800 dark:bg-blue-200 dark:text-blue-800 group-hover:bg-blue-200 dark:group-hover:bg-blue-300"
       );
     });
 
-    it('should use custom sizes', () => {
+    it("should use custom sizes", () => {
       const theme = {
         badge: {
           root: {
             size: {
-              xxl: 'text-2xl',
+              xxl: "text-2xl",
             },
           },
           icon: {
-            off: 'rounded-lg p-1',
-            on: 'rounded-full p-5',
+            off: "rounded-lg p-1",
+            on: "rounded-full p-5",
             size: {
-              xxl: 'w-6 h-6',
+              xxl: "w-6 h-6",
             },
           },
         },
       };
-      render(()=>
+      render(() => (
         <Flowbite theme={{ theme }}>
           <Badge size="xxl">A badge</Badge>
           <Badge icon={HiSolidCheck} size="xxl" />
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
 
-      const badges = screen.getAllByTestId('flowbite-badge');
+      const badges = screen.getAllByTestId("flowbite-badge");
       const regularBadge = badges[0];
       const emptyBadge = badges[1];
 
-      expect(regularBadge).toHaveClass('text-2xl');
-      expect(regularBadge).toHaveClass('rounded-lg p-1');
-      expect(emptyBadge).toHaveClass('rounded-full p-5');
-      expect(icon()).toHaveClass('w-6 h-6');
+      expect(regularBadge).toHaveClass("text-2xl");
+      expect(regularBadge).toHaveClass("rounded-lg p-1");
+      expect(emptyBadge).toHaveClass("rounded-full p-5");
+      expect(icon()).toHaveClass("w-6 h-6");
     });
   });
 });
 
-const badge = () => screen.getByTestId('flowbite-badge');
+const badge = () => screen.getByTestId("flowbite-badge");
 
-const icon = () => screen.getByTestId('flowbite-badge-icon');
+const icon = () => screen.getByTestId("flowbite-badge-icon");
 
-const link = () => screen.getByRole('link');
+const link = () => screen.getByRole("link");

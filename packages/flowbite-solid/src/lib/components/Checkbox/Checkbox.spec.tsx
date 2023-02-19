@@ -1,11 +1,11 @@
-import { render } from '@solidjs/testing-library';
-import { describe, expect, it } from 'vitest';
-import { Checkbox } from './Checkbox';
+import { render } from "@solidjs/testing-library";
+import { describe, expect, it } from "vitest";
+import { Checkbox } from "./Checkbox";
 
-describe.concurrent('Components / Checkbox', () => {
-  describe.concurrent('A11y', () => {
+describe.concurrent("Components / Checkbox", () => {
+  describe.concurrent("A11y", () => {
     it('should have role="checkbox" by default', () => {
-      const checkbox = render(()=><Checkbox />).getByRole('checkbox');
+      const checkbox = render(() => <Checkbox />).getByRole("checkbox");
 
       expect(checkbox).toBeInTheDocument();
     });

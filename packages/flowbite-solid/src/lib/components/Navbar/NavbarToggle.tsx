@@ -1,25 +1,25 @@
-import classNames from 'clsx';
-import { HiSolidMenuAlt3 as GoThreeBars } from 'solid-icons/hi';
-import {DeepPartial, IconComponent} from '..';
-import { mergeDeep } from '../../helpers/mergeDeep';
-import { useTheme } from '../Flowbite';
-import { useNavbarContext } from './NavbarContext';
-import {Component, ComponentProps, createMemo, mergeProps, splitProps} from "solid-js";
-import {Dynamic} from "solid-js/web";
+import classNames from "clsx";
+import { HiSolidMenuAlt3 as GoThreeBars } from "solid-icons/hi";
+import { DeepPartial, IconComponent } from "..";
+import { mergeDeep } from "../../helpers/mergeDeep";
+import { useTheme } from "../Flowbite";
+import { useNavbarContext } from "./NavbarContext";
+import { Component, ComponentProps, createMemo, mergeProps, splitProps } from "solid-js";
+import { Dynamic } from "solid-js/web";
 
 export interface FlowbiteNavbarToggleTheme {
   base: string;
   icon: string;
 }
 
-export interface NavbarToggleProps extends ComponentProps<'button'> {
+export interface NavbarToggleProps extends ComponentProps<"button"> {
   barIcon?: IconComponent;
   theme?: DeepPartial<FlowbiteNavbarToggleTheme>;
 }
 
-export const NavbarToggle: Component<NavbarToggleProps> = (p) => {
+export const NavbarToggle: Component<NavbarToggleProps> = p => {
   const ctx = useNavbarContext();
-  const defaultProps = {theme:{}, barIcon: GoThreeBars};
+  const defaultProps = { theme: {}, barIcon: GoThreeBars };
   const [local, props] = splitProps(mergeProps(defaultProps, p), ["class", "theme", "barIcon"]);
   const theme = createMemo(() => mergeDeep(useTheme().theme.navbar.toggle, local.theme));
 

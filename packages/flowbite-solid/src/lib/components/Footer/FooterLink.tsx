@@ -1,12 +1,12 @@
-import classNames from 'clsx';
-import { useTheme } from '../Flowbite';
-import {Component, ComponentProps, ParentProps, splitProps} from "solid-js";
+import classNames from "clsx";
+import { useTheme } from "../Flowbite";
+import { Component, ComponentProps, ParentProps, splitProps } from "solid-js";
 
-export interface FooterLinkProps extends ParentProps<ComponentProps<'a'>> {
+export interface FooterLinkProps extends ParentProps<ComponentProps<"a">> {
   href: string;
 }
 
-export const FooterLink: Component<FooterLinkProps> = (p) => {
+export const FooterLink: Component<FooterLinkProps> = p => {
   const theme = useTheme().theme.footer.groupLink.link;
   const [local, _] = splitProps(p, ["class", "children", "href"]);
   return (

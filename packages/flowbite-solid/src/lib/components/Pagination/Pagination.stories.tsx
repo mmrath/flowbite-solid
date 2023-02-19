@@ -1,10 +1,10 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { useEffect, useState } from 'react';
-import type { PaginationProps } from './Pagination';
-import { Pagination } from './Pagination';
+import type { Meta, Story } from "@storybook/react/types-6-0";
+import { useEffect, useState } from "react";
+import type { PaginationProps } from "./Pagination";
+import { Pagination } from "./Pagination";
 
 export default {
-  title: 'Components/Pagination',
+  title: "Components/Pagination",
   component: Pagination,
   decorators: [
     (Story): JSX.Element => (
@@ -17,7 +17,7 @@ export default {
 
 const Template: Story<PaginationProps> = ({
   currentPage = 1,
-  layout = 'pagination',
+  layout = "pagination",
   totalPages = 100,
   ...rest
 }): JSX.Element => {
@@ -32,38 +32,44 @@ const Template: Story<PaginationProps> = ({
   }, [currentPage]);
 
   return (
-    <Pagination {...rest} currentPage={page} layout={layout} onPageChange={onPageChange} totalPages={totalPages} />
+    <Pagination
+      {...rest}
+      currentPage={page}
+      layout={layout}
+      onPageChange={onPageChange}
+      totalPages={totalPages}
+    />
   );
 };
 
 export const Default = Template.bind({});
 
 export const PaginationWithIcons = Template.bind({});
-PaginationWithIcons.storyName = 'Pagination with icons';
+PaginationWithIcons.storyName = "Pagination with icons";
 PaginationWithIcons.args = {
   showIcons: true,
 };
 
 export const Nav = Template.bind({});
 Nav.args = {
-  layout: 'navigation',
+  layout: "navigation",
 };
 
 export const NavWithIcons = Template.bind({});
-NavWithIcons.storyName = 'Nav with icons';
+NavWithIcons.storyName = "Nav with icons";
 NavWithIcons.args = {
-  layout: 'navigation',
+  layout: "navigation",
   showIcons: true,
 };
 
 export const Table = Template.bind({});
 Table.args = {
-  layout: 'table',
+  layout: "table",
 };
 
 export const TableWithIcons = Template.bind({});
-TableWithIcons.storyName = 'Table with icons';
+TableWithIcons.storyName = "Table with icons";
 TableWithIcons.args = {
-  layout: 'table',
+  layout: "table",
   showIcons: true,
 };

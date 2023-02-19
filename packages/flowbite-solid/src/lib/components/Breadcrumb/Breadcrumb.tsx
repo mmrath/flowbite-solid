@@ -1,9 +1,9 @@
-import classNames from 'clsx';
-import { DeepPartial } from '..';
-import { mergeDeep } from '../../helpers/mergeDeep';
-import { useTheme } from '../Flowbite';
-import BreadcrumbItem, { FlowbiteBreadcrumbItemTheme } from './BreadcrumbItem';
-import {Component, ComponentProps, createMemo, mergeProps, splitProps} from "solid-js";
+import classNames from "clsx";
+import { DeepPartial } from "..";
+import { mergeDeep } from "../../helpers/mergeDeep";
+import { useTheme } from "../Flowbite";
+import BreadcrumbItem, { FlowbiteBreadcrumbItemTheme } from "./BreadcrumbItem";
+import { Component, ComponentProps, createMemo, mergeProps, splitProps } from "solid-js";
 
 export interface FlowbiteBreadcrumbTheme {
   root: FlowbiteBreadcrumbRootTheme;
@@ -15,15 +15,14 @@ export interface FlowbiteBreadcrumbRootTheme {
   list: string;
 }
 
-export interface BreadcrumbComponentProps extends ComponentProps<'nav'> {
+export interface BreadcrumbComponentProps extends ComponentProps<"nav"> {
   theme?: DeepPartial<FlowbiteBreadcrumbRootTheme>;
 }
 
-const BreadcrumbComponent: Component<BreadcrumbComponentProps> = (p) => {
-
-  const defaultProps = {theme:{}}
+const BreadcrumbComponent: Component<BreadcrumbComponentProps> = p => {
+  const defaultProps = { theme: {} };
   const [local, props] = splitProps(mergeProps(defaultProps, p), ["children", "class", "theme"]);
-  const theme = createMemo(()=>{
+  const theme = createMemo(() => {
     return mergeDeep(useTheme().theme.breadcrumb.root, local.theme);
   });
   return (
@@ -33,4 +32,6 @@ const BreadcrumbComponent: Component<BreadcrumbComponentProps> = (p) => {
   );
 };
 
-export const Breadcrumb = Object.assign(BreadcrumbComponent, { Item: BreadcrumbItem });
+export const Breadcrumb = Object.assign(BreadcrumbComponent, {
+  Item: BreadcrumbItem,
+});

@@ -1,18 +1,18 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import type { SelectProps } from './Select';
-import { Select } from './Select';
+import type { Meta, Story } from "@storybook/react/types-6-0";
+import type { SelectProps } from "./Select";
+import { Select } from "./Select";
 
 export default {
-  title: 'Components/Select',
+  title: "Components/Select",
   component: Select,
 } as Meta;
 
-const Template: Story<SelectProps> = (args) => <Select {...args} />;
+const Template: Story<SelectProps> = args => <Select {...args} />;
 
 export const DefaultSelect = Template.bind({});
-DefaultSelect.storyName = 'Select';
+DefaultSelect.storyName = "Select";
 DefaultSelect.args = {
-  id: 'countries',
+  id: "countries",
   children: (
     <>
       <option>United States</option>

@@ -4,7 +4,7 @@
  * @returns boolean
  */
 function isObject(item: unknown): item is Record<string, unknown> {
-  return item !== null && typeof item === 'object' && item.constructor === Object;
+  return item !== null && typeof item === "object" && item.constructor === Object;
 }
 
 function cloneDeep<T>(source: T) {
@@ -14,7 +14,7 @@ function cloneDeep<T>(source: T) {
 
   const output = { ...source };
 
-  Object.keys(source).forEach((key) => {
+  Object.keys(source).forEach(key => {
     (output as Record<string, unknown>)[key] = cloneDeep(source[key]);
   });
 
@@ -35,11 +35,16 @@ export function mergeDeep<T extends object, S extends object>(target: T, source:
   let output = { ...target, ...source };
 
   if (isObject(source) && isObject(target)) {
-    Object.keys(source).forEach((key) => {
+    Object.keys(source).forEach(key => {
       if (isObject(source[key]) && key in target && isObject(target[key])) {
-        (output as Record<string, unknown>)[key] = mergeDeep(target[key] as object, source[key] as object);
+        (output as Record<string, unknown>)[key] = mergeDeep(
+          target[key] as object,
+          source[key] as object
+        );
       } else {
-        (output as Record<string, unknown>)[key] = isObject(source[key]) ? cloneDeep(source[key]) : source[key];
+        (output as Record<string, unknown>)[key] = isObject(source[key])
+          ? cloneDeep(source[key])
+          : source[key];
       }
     });
   }

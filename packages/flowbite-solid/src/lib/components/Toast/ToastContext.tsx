@@ -1,4 +1,4 @@
-import {createContext, useContext} from "solid-js";
+import { createContext, useContext } from "solid-js";
 
 export type Duration = 75 | 100 | 150 | 200 | 300 | 500 | 700 | 1000;
 
@@ -16,7 +16,7 @@ export function useToastContext(): ToastContext {
   const context = useContext(ToastContext);
 
   if (!context) {
-    throw new Error('useToastContext should be used within the ToastContext provider!');
+    throw new Error("useToastContext should be used within the ToastContext provider!");
   }
 
   return context;

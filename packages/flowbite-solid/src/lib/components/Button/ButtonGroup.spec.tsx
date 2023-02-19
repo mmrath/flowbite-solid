@@ -1,48 +1,48 @@
-import { render, screen } from '@solidjs/testing-library';
-import userEvent from '@testing-library/user-event';
-import { describe, expect, it, vi } from 'vitest';
-import { Button } from './index';
-import defaultTheme from '../../theme/default';
-import { Flowbite } from '../Flowbite';
+import { render, screen } from "@solidjs/testing-library";
+import userEvent from "@testing-library/user-event";
+import { describe, expect, it, vi } from "vitest";
+import { Button } from "./index";
+import defaultTheme from "../../theme/default";
+import { Flowbite } from "../Flowbite";
 
-describe('Components / Button group', () => {
-  describe('A11y', () => {
+describe("Components / Button group", () => {
+  describe("A11y", () => {
     it('should have `role="group"` by default', () => {
-      render(()=>
+      render(() => (
         <Button.Group>
           <Button>One</Button>
           <Button>Two</Button>
           <Button>Three</Button>
-        </Button.Group>,
-      );
+        </Button.Group>
+      ));
 
       expect(group()).toBeInTheDocument();
     });
 
-    it('should allow `aria-label`', () => {
-      render(()=>
+    it("should allow `aria-label`", () => {
+      render(() => (
         <Button.Group aria-label="My group">
           <Button>One</Button>
           <Button>Two</Button>
           <Button>Three</Button>
-        </Button.Group>,
-      ),
-        expect(group()).toHaveAccessibleName('My group');
+        </Button.Group>
+      )),
+        expect(group()).toHaveAccessibleName("My group");
     });
   });
 
-  describe('Keyboard interactions', () => {
-    it('should trigger `onClick` when `Space` is pressed on a `Button`', async () => {
+  describe("Keyboard interactions", () => {
+    it("should trigger `onClick` when `Space` is pressed on a `Button`", async () => {
       const user = userEvent.setup();
       const onClick = vi.fn();
 
-      render(()=>
+      render(() => (
         <Button.Group>
           <Button onClick={onClick}>One</Button>
           <Button>Two</Button>
           <Button>Three</Button>
-        </Button.Group>,
-      );
+        </Button.Group>
+      ));
 
       const firstButton = buttons()[0];
 
@@ -52,16 +52,16 @@ describe('Components / Button group', () => {
       expect(onClick).toHaveBeenCalledTimes(1);
     });
 
-    it('should be possible to `Tab` out', async () => {
+    it("should be possible to `Tab` out", async () => {
       const user = userEvent.setup();
-      render(()=>
+      render(() => (
         <>
           <Button.Group>
             <Button>Inside</Button>
           </Button.Group>
           <Button>Outside</Button>
-        </>,
-      ),
+        </>
+      )),
         await user.tab();
 
       expect(buttons()[0]).toHaveFocus();
@@ -72,15 +72,15 @@ describe('Components / Button group', () => {
     });
   });
 
-  describe('Rendering', () => {
+  describe("Rendering", () => {
     it("should correctly set each `Button`'s position", () => {
-      render(()=>
+      render(() => (
         <Button.Group>
           <Button positionInGroup={"start"}>One</Button>
           <Button positionInGroup={"middle"}>Two</Button>
           <Button positionInGroup={"end"}>Three</Button>
-        </Button.Group>,
-      );
+        </Button.Group>
+      ));
 
       const positionClasses = defaultTheme.buttonGroup.position;
 
@@ -90,49 +90,49 @@ describe('Components / Button group', () => {
     });
   });
 
-  describe('Theme', () => {
-    it('should use `base` classes', () => {
+  describe("Theme", () => {
+    it("should use `base` classes", () => {
       const theme = {
         buttonGroup: {
-          base: 'text-gray-400',
+          base: "text-gray-400",
         },
       };
 
-      const {getByRole} = render(()=>
+      const { getByRole } = render(() => (
         <Flowbite theme={{ theme }}>
           <Button.Group>
             <Button>One</Button>
             <Button>Two</Button>
             <Button>Three</Button>
           </Button.Group>
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
       const group = getByRole("group");
-      expect(group).toHaveClass('text-gray-400');
+      expect(group).toHaveClass("text-gray-400");
     });
 
-    it('should use `position` classes', () => {
+    it("should use `position` classes", () => {
       const theme = {
         buttonGroup: {
-          base: 'text-gray-400',
+          base: "text-gray-400",
         },
       };
 
-      const {getByRole} = render(()=>
+      const { getByRole } = render(() => (
         <Flowbite theme={{ theme }}>
           <Button.Group>
             <Button>One</Button>
             <Button>Two</Button>
             <Button>Three</Button>
           </Button.Group>
-        </Flowbite>,
-      );
+        </Flowbite>
+      ));
       const group = getByRole("group");
-      expect(group).toHaveClass('text-gray-400');
+      expect(group).toHaveClass("text-gray-400");
     });
   });
 });
 
-const group = () => screen.getByRole('group');
+const group = () => screen.getByRole("group");
 
-const buttons = () => screen.getAllByRole('button');
+const buttons = () => screen.getAllByRole("button");

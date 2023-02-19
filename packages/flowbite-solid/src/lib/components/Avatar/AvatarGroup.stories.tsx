@@ -1,13 +1,13 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Avatar } from './Avatar';
-import type { AvatarGroupProps } from './AvatarGroup';
+import type { Meta, Story } from "@storybook/react/types-6-0";
+import { Avatar } from "./Avatar";
+import type { AvatarGroupProps } from "./AvatarGroup";
 
 export default {
-  title: 'Components/Avatar',
+  title: "Components/Avatar",
   component: Avatar.Group,
 } as Meta;
 
-const Template: Story<AvatarGroupProps> = (args) => (
+const Template: Story<AvatarGroupProps> = args => (
   <Avatar.Group {...args}>
     <Avatar img="https://flowbite.com/docs/images/people/profile-picture-1.jpg" rounded stacked />
     <Avatar img="https://flowbite.com/docs/images/people/profile-picture-2.jpg" rounded stacked />
@@ -18,5 +18,5 @@ const Template: Story<AvatarGroupProps> = (args) => (
 );
 
 export const DefaultAvatarGroup = Template.bind({});
-DefaultAvatarGroup.storyName = 'Grouped';
+DefaultAvatarGroup.storyName = "Grouped";
 DefaultAvatarGroup.args = {};

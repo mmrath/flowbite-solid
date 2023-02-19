@@ -1,2 +1,2 @@
-export * from './Pagination';
-export type { PaginationButtonProps } from './PaginationButton';
+export * from "./Pagination";
+export type { PaginationButtonProps } from "./PaginationButton";

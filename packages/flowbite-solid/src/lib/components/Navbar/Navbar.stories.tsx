@@ -1,29 +1,35 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Avatar } from '../Avatar';
-import { Button } from '../Button';
-import { Dropdown } from '../Dropdown';
-import type { NavbarComponentProps } from '../Navbar';
-import { Navbar } from '../Navbar';
+import type { Meta, Story } from "@storybook/react/types-6-0";
+import { Avatar } from "../Avatar";
+import { Button } from "../Button";
+import { Dropdown } from "../Dropdown";
+import type { NavbarComponentProps } from "../Navbar";
+import { Navbar } from "../Navbar";
 
 export default {
-  title: 'Components/Navbar',
+  title: "Components/Navbar",
   component: Navbar,
 } as Meta;
 
-const Template: Story<NavbarComponentProps> = (args) => (
+const Template: Story<NavbarComponentProps> = args => (
   <div class="w-4/5">
     <Navbar {...args} />
   </div>
 );
 
 export const DefaultNavbar = Template.bind({});
-DefaultNavbar.storyName = 'Default';
+DefaultNavbar.storyName = "Default";
 DefaultNavbar.args = {
   children: (
     <>
       <Navbar.Brand href="https://flowbite.com/">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+        <img
+          src="https://flowbite.com/docs/images/logo.svg"
+          class="h-6 mr-3 sm:h-9"
+          alt="Flowbite Logo"
+        />
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          Flowbite
+        </span>
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
@@ -44,8 +50,14 @@ WithCTA.args = {
   children: (
     <>
       <Navbar.Brand href="https://flowbite.com/">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+        <img
+          src="https://flowbite.com/docs/images/logo.svg"
+          class="h-6 mr-3 sm:h-9"
+          alt="Flowbite Logo"
+        />
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          Flowbite
+        </span>
       </Navbar.Brand>
       <div class="flex gap-3 md:order-2">
         <Button>Get started</Button>
@@ -65,20 +77,30 @@ WithCTA.args = {
 };
 
 export const WithDropdown = Template.bind({});
-WithDropdown.storyName = 'With dropdown';
+WithDropdown.storyName = "With dropdown";
 WithDropdown.args = {
   children: (
     <>
       <Navbar.Brand href="https://flowbite.com/">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
-        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+        <img
+          src="https://flowbite.com/docs/images/logo.svg"
+          class="h-6 mr-3 sm:h-9"
+          alt="Flowbite Logo"
+        />
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          Flowbite
+        </span>
       </Navbar.Brand>
       <div class="flex gap-3 md:order-2">
         <Dropdown
           arrowIcon={false}
           inline
           label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
+            <Avatar
+              alt="User settings"
+              img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+              rounded
+            />
           }
         >
           <Dropdown.Header>

@@ -1,3 +1,3 @@
 module.exports = {
-    preset: "solid-jest/preset/browser",
+  preset: "solid-jest/preset/browser",
 };

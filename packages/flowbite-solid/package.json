@@ -1,11 +1,11 @@
 {
   "name": "flowbite-solid",
-  "version": "0.0.2",
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.js",
-  "types": "./lib/esm/index.d.ts",
+  "version": "0.0.3",
+  "main": "./dist/lib/cjs/index.js",
+  "module": "./dist/lib/esm/index.js",
+  "types": "../dist/lib/esm/index.d.ts",
   "files": [
-    "./lib"
+    "./dist/lib"
   ],
   "author": {
     "name": "Murali Mohan Rath",
@@ -23,9 +23,9 @@
   "private": false,
   "homepage": "https://github.com/mmrath/flowbite-solid",
   "scripts": {
-    "build:lib": "./node_modules/.bin/rimraf lib && pnpm build:lib:esm && pnpm build:lib:cjs",
+    "build": "./node_modules/.bin/rimraf lib && pnpm build:lib:esm && pnpm build:lib:cjs",
     "build:lib:cjs": "./node_modules/.bin/tsc -p tsconfig.lib.json",
-    "build:lib:esm": "./node_modules/.bin/tsc -p tsconfig.lib.json --module esnext --declaration --outDir lib/esm",
+    "build:lib:esm": "./node_modules/.bin/tsc -p tsconfig.lib.json --module esnext --declaration --outDir dist/lib/esm",
     "test": "./node_modules/.bin/vitest run"
   },
   "dependencies": {
