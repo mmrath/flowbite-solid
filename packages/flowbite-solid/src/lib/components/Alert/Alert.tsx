@@ -1,11 +1,11 @@
 import classNames from "clsx";
-import { HiSolidX } from "solid-icons/hi";
-import { DeepPartial, IconComponent } from "..";
-import { mergeDeep } from "../../helpers/mergeDeep";
-import type { FlowbiteColors } from "../Flowbite/FlowbiteTheme";
-import { useTheme } from "../Flowbite";
-import { Component, ComponentProps, createMemo, JSX, mergeProps, ParentProps } from "solid-js";
-import { Dynamic } from "solid-js/web";
+import {DeepPartial, IconComponent} from "..";
+import {mergeDeep} from "../../helpers/mergeDeep";
+import type {FlowbiteColors} from "../Flowbite/FlowbiteTheme";
+import {useTheme} from "../Flowbite";
+import {Component, ComponentProps, createMemo, JSX, mergeProps, ParentProps} from "solid-js";
+import {Dynamic} from "solid-js/web";
+import {HiSolidX} from "solid-icons/hi";
 
 export interface FlowbiteAlertTheme {
   root: FlowbiteAlertRootTheme;
