@@ -1,5 +1,5 @@
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "solid-icons/bs";
-import { Footer } from "flowbite-solid/src/lib/components/Footer";
+import { Footer } from "flowbite-solid";
 import { Component } from "solid-js";
 
 const FooterPage: Component = () => {

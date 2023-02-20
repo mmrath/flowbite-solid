@@ -1,7 +1,7 @@
-import { Accordion } from "flowbite-solid/src/lib/components/Accordion";
+import { Accordion } from "flowbite-solid";
 import { createSignal } from "solid-js";
 import { HiOutlineArrowCircleDown } from "solid-icons/hi";
-import { Flowbite } from "flowbite-solid/src/lib/components/Flowbite";
+import { Flowbite } from "flowbite-solid";
 
 export default function AccordionDemo() {
   const [collapseAll, setCollapseAll] = createSignal(false);

@@ -14,7 +14,7 @@ import {
   Title,
 } from "solid-start";
 import "./root.css";
-import {Flowbite} from "flowbite-solid/src/lib/components/Flowbite";
+import {Flowbite} from "flowbite-solid";
 
 export default function Root() {
   const location = useLocation();

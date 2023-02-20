@@ -2,8 +2,8 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "module": "CommonJS",
-    "outDir": "dist/lib/cjs"
+    "outDir": "dist/cjs"
   },
   "exclude": ["**/*.spec.tsx", "**/*.stories.tsx"],
-  "include": ["src/lib"]
+  "include": ["src"]
 }
