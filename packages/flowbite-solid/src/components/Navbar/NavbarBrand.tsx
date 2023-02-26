@@ -12,12 +12,12 @@ import {
 } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteNavbarBrandTheme {
+export interface NavbarBrandTheme {
   base: string;
 }
 
 export interface NavbarBrandProps extends ParentProps<ComponentProps<"a">> {
-  theme?: DeepPartial<FlowbiteNavbarBrandTheme>;
+  theme?: DeepPartial<NavbarBrandTheme>;
   as?: string;
   href?: string;
 }

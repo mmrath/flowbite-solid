@@ -1,7 +1,7 @@
 import classNames from "clsx";
 import { DeepPartial } from "..";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import type { FlowbiteColors, FlowbitePositions, FlowbiteSizes } from "../Flowbite/FlowbiteTheme";
+import type { ThemeColors, Positions, Sizes } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite/ThemeContext";
 import AvatarGroup from "./AvatarGroup";
 import AvatarGroupCounter from "./AvatarGroupCounter";
@@ -17,30 +17,30 @@ import {
 } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteAvatarTheme {
-  root: FlowbiteAvatarRootTheme;
-  img: FlowbiteAvatarImageTheme;
-  status: FlowbiteAvatarStatusTheme;
-  initials: FlowbiteAvatarInitialsTheme;
+export interface AvatarTheme {
+  root: AvatarRootTheme;
+  img: AvatarImageTheme;
+  status: AvatarStatusTheme;
+  initials: AvatarInitialsTheme;
 }
 
-export interface FlowbiteAvatarRootTheme {
+export interface AvatarRootTheme {
   base: string;
   bordered: string;
   color: AvatarColors;
   rounded: string;
   size: AvatarSizes;
   stacked: string;
-  statusPosition: FlowbitePositions;
+  statusPosition: Positions;
 }
 
-export interface FlowbiteAvatarImageTheme {
+export interface AvatarImageTheme {
   off: string;
   on: string;
   placeholder: string;
 }
 
-export interface FlowbiteAvatarStatusTheme {
+export interface AvatarStatusTheme {
   away: string;
   base: string;
   busy: string;
@@ -48,20 +48,20 @@ export interface FlowbiteAvatarStatusTheme {
   online: string;
 }
 
-export interface FlowbiteAvatarInitialsTheme {
+export interface AvatarInitialsTheme {
   base: string;
   text: string;
 }
 
 export interface AvatarColors
   extends Pick<
-    FlowbiteColors,
+    ThemeColors,
     "failure" | "gray" | "info" | "pink" | "purple" | "success" | "warning"
   > {
   [key: string]: string;
 }
 
-export interface AvatarSizes extends Pick<FlowbiteSizes, "xs" | "sm" | "md" | "lg" | "xl"> {
+export interface AvatarSizes extends Pick<Sizes, "xs" | "sm" | "md" | "lg" | "xl"> {
   [key: string]: string;
 }
 
@@ -80,9 +80,9 @@ export interface AvatarProps extends ParentProps<Omit<ComponentProps<"div">, "co
   size?: keyof AvatarSizes;
   stacked?: boolean;
   status?: "away" | "busy" | "offline" | "online";
-  statusPosition?: keyof FlowbitePositions;
+  statusPosition?: keyof Positions;
   placeholderInitials?: string;
-  theme?: DeepPartial<FlowbiteAvatarTheme>;
+  theme?: DeepPartial<AvatarTheme>;
 }
 
 const AvatarComponent: Component<AvatarProps> = p => {
@@ -197,7 +197,7 @@ const AvatarComponent: Component<AvatarProps> = p => {
             class={classNames(
               theme().status.base,
               theme().status[local.status],
-              theme().root.statusPosition[local.statusPosition as keyof FlowbitePositions]
+              theme().root.statusPosition[local.statusPosition as keyof Positions]
             )}
           />
         )}

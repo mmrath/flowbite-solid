@@ -9,7 +9,7 @@ import { FooterLinkGroup } from "./FooterLinkGroup";
 import { FooterTitle } from "./FooterTitle";
 import { Component, ComponentProps, JSX, mergeProps } from "solid-js";
 
-export interface FlowbiteFooterTheme {
+export interface FooterTheme {
   base: string;
   container: string;
   bgDark: string;

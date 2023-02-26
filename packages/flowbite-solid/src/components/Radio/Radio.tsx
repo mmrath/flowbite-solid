@@ -4,12 +4,12 @@ import { mergeDeep } from "../../helpers/mergeDeep";
 import { useTheme } from "../Flowbite";
 import { Component, ComponentProps, createMemo, mergeProps, splitProps } from "solid-js";
 
-export interface FlowbiteRadioTheme {
+export interface RadioTheme {
   base: string;
 }
 
 export interface RadioProps extends Omit<ComponentProps<"input">, "type"> {
-  theme?: DeepPartial<FlowbiteRadioTheme>;
+  theme?: DeepPartial<RadioTheme>;
 }
 
 export const Radio: Component<RadioProps> = p => {

@@ -1,15 +1,15 @@
 import classNames from "clsx";
-import type { FlowbiteColors } from "../Flowbite/FlowbiteTheme";
+import type { ThemeColors } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite/ThemeContext";
 import { ComponentProps, mergeProps, ParentProps, splitProps } from "solid-js";
 
-export interface FlowbiteHelperTextTheme {
+export interface HelperTextTheme {
   base: string;
   colors: HelperColors;
 }
 
 export interface HelperColors
-  extends Pick<FlowbiteColors, "gray" | "info" | "failure" | "warning" | "success"> {
+  extends Pick<ThemeColors, "gray" | "info" | "failure" | "warning" | "success"> {
   [key: string]: string;
 }
 

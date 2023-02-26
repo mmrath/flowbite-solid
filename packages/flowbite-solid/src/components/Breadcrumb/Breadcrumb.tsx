@@ -5,18 +5,18 @@ import { useTheme } from "../Flowbite";
 import BreadcrumbItem, { FlowbiteBreadcrumbItemTheme } from "./BreadcrumbItem";
 import { Component, ComponentProps, createMemo, mergeProps, splitProps } from "solid-js";
 
-export interface FlowbiteBreadcrumbTheme {
-  root: FlowbiteBreadcrumbRootTheme;
+export interface BreadcrumbTheme {
+  root: BreadcrumbRootTheme;
   item: FlowbiteBreadcrumbItemTheme;
 }
 
-export interface FlowbiteBreadcrumbRootTheme {
+export interface BreadcrumbRootTheme {
   base: string;
   list: string;
 }
 
 export interface BreadcrumbComponentProps extends ComponentProps<"nav"> {
-  theme?: DeepPartial<FlowbiteBreadcrumbRootTheme>;
+  theme?: DeepPartial<BreadcrumbRootTheme>;
 }
 
 const BreadcrumbComponent: Component<BreadcrumbComponentProps> = p => {

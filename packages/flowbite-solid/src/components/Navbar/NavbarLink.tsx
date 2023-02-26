@@ -1,7 +1,7 @@
 import classNames from "clsx";
 import { DeepPartial } from "..";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import { FlowbiteBoolean } from "../Flowbite/FlowbiteTheme";
+import { OnOffStyles } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite/ThemeContext";
 import { Dynamic } from "solid-js/web";
 import {
@@ -13,17 +13,17 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteNavbarLinkTheme {
+export interface NavbarLinkTheme {
   base: string;
-  active: FlowbiteBoolean;
-  disabled: FlowbiteBoolean;
+  active: OnOffStyles;
+  disabled: OnOffStyles;
 }
 
 export interface NavbarLinkProps extends ParentProps<ComponentProps<"a">> {
   active?: boolean;
   disabled?: boolean;
   href?: string;
-  theme?: DeepPartial<FlowbiteNavbarLinkTheme>;
+  theme?: DeepPartial<NavbarLinkTheme>;
   as?: string;
 }
 

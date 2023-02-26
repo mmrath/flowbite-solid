@@ -7,14 +7,14 @@ import { useNavbarContext } from "./NavbarContext";
 import { Component, ComponentProps, createMemo, mergeProps, splitProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteNavbarToggleTheme {
+export interface NavbarToggleTheme {
   base: string;
   icon: string;
 }
 
 export interface NavbarToggleProps extends ComponentProps<"button"> {
   barIcon?: IconComponent;
-  theme?: DeepPartial<FlowbiteNavbarToggleTheme>;
+  theme?: DeepPartial<NavbarToggleTheme>;
 }
 
 export const NavbarToggle: Component<NavbarToggleProps> = p => {

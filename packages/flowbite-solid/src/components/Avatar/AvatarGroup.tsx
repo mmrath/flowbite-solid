@@ -11,16 +11,16 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteAvatarGroupTheme {
-  root: FlowbiteAvatarGroupRootTheme;
+export interface AvatarGroupTheme {
+  root: AvatarGroupRootTheme;
 }
 
-export interface FlowbiteAvatarGroupRootTheme {
+export interface AvatarGroupRootTheme {
   base: string;
 }
 
 export interface AvatarGroupProps extends ParentProps<ComponentProps<"div">> {
-  theme?: DeepPartial<FlowbiteAvatarGroupRootTheme>;
+  theme?: DeepPartial<AvatarGroupRootTheme>;
 }
 
 const AvatarGroup: Component<AvatarGroupProps> = p => {

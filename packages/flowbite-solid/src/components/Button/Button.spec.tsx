@@ -1,7 +1,7 @@
 import { render, screen } from "@solidjs/testing-library";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import { Button } from "./Button";
 
 describe("Components / Button", () => {
@@ -115,9 +115,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(button()).toHaveClass("font-extralight");
@@ -133,9 +133,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button color="primary" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(button()).toHaveClass("font-extralight");
@@ -149,9 +149,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button disabled />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(button()).toHaveClass("font-extralight");
@@ -167,9 +167,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button gradientMonochrome="yellowToPink" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(button()).toHaveClass("font-extralight");
@@ -185,9 +185,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button gradientDuoTone="yellowToPink" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(button()).toHaveClass("font-extralight");
@@ -203,9 +203,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button>Hi there</Button>
-        </Flowbite>
+        </Theme>
       ));
 
       const buttonInnerContent = screen.getByText("Hi there");
@@ -221,9 +221,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button label="Hi there" />
-        </Flowbite>
+        </Theme>
       ));
 
       const buttonLabel = screen.getByText("Hi there");
@@ -246,13 +246,13 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button>Normal button</Button>
           <Button outline>Outline button</Button>
           <Button outline pill>
             Outline pill button
           </Button>
-        </Flowbite>
+        </Theme>
       ));
 
       const normalButton = screen.getByText("Normal button");
@@ -275,10 +275,10 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button label="Normal button" />
           <Button label="Pill" pill />
-        </Flowbite>
+        </Theme>
       ));
 
       const normalButton = buttons()[0];
@@ -298,9 +298,9 @@ describe("Components / Button", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button size="xxl">Hello</Button>
-        </Flowbite>
+        </Theme>
       ));
 
       const button = screen.getByText("Hello");

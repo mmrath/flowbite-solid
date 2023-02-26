@@ -4,12 +4,12 @@ import { mergeDeep } from "../../helpers/mergeDeep";
 import { useTheme } from "../Flowbite";
 import { ComponentProps, createMemo, mergeProps, splitProps } from "solid-js";
 
-export interface FlowbiteCheckboxTheme {
+export interface CheckboxTheme {
   base: string;
 }
 
 export interface CheckboxProps extends Omit<ComponentProps<"input">, "type"> {
-  theme?: DeepPartial<FlowbiteCheckboxTheme>;
+  theme?: DeepPartial<CheckboxTheme>;
 }
 
 export const Checkbox = (p: CheckboxProps) => {

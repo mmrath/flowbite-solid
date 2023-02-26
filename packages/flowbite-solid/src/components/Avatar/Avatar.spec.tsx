@@ -1,6 +1,6 @@
 import { render, screen } from "@solidjs/testing-library";
 import { describe, expect, it } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import type { CustomFlowbiteTheme } from "../Flowbite/FlowbiteTheme";
 import { Avatar } from "./Avatar";
 
@@ -17,9 +17,9 @@ describe("Components / Avatar", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Avatar size="xxl" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(img()).toHaveClass("h-64 w-64");
@@ -36,14 +36,14 @@ describe("Components / Avatar", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Avatar
             bordered
             color="rose"
             img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
             alt="Your avatar"
           />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(img()).toHaveClass("ring-rose-500 dark:ring-rose-400");
@@ -52,9 +52,9 @@ describe("Components / Avatar", () => {
   describe("Placeholder", () => {
     it("should display placeholder initials", () => {
       render(() => (
-        <Flowbite>
+        <Theme>
           <Avatar placeholderInitials="RR" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(initialsPlaceholderText()).toHaveTextContent("RR");
@@ -62,9 +62,9 @@ describe("Components / Avatar", () => {
 
     it("should support border color with placeholder initials", () => {
       render(() => (
-        <Flowbite>
+        <Theme>
           <Avatar placeholderInitials="RR" bordered color="success" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(initialsPlaceholder()).toHaveClass("ring-green-500 dark:ring-green-500");
@@ -73,9 +73,9 @@ describe("Components / Avatar", () => {
   describe("Image", () => {
     it("should support custom image elements", () => {
       render(() => (
-        <Flowbite>
+        <Theme>
           <Avatar img={props => <img referrerPolicy="no-referrer" {...props} />} />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(img()).toHaveAttribute("referrerpolicy", "no-referrer");
@@ -84,9 +84,9 @@ describe("Components / Avatar", () => {
   describe("Status", () => {
     it("should have online status indicator", () => {
       render(() => (
-        <Flowbite>
+        <Theme>
           <Avatar status="online" />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(status()).toHaveClass("bg-green-400");

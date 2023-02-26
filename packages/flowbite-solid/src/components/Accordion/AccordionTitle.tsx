@@ -1,7 +1,7 @@
 import classNames from "clsx";
 import { DeepPartial } from "../index";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import type { FlowbiteBoolean, FlowbiteHeadingLevel } from "../Flowbite/FlowbiteTheme";
+import type { OnOffStyles, HeadingLevel } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import { useAccordionPanelContext } from "./AccordionPanelContext";
 import {
@@ -27,14 +27,14 @@ export interface FlowbiteAccordionTitleTheme {
     };
   };
   base: string;
-  flush: FlowbiteBoolean;
+  flush: OnOffStyles;
   heading: string;
-  open: FlowbiteBoolean;
+  open: OnOffStyles;
 }
 
 export interface AccordionTitleProps extends ComponentProps<"button"> {
   arrowIcon?: Component<ComponentProps<"svg">>;
-  as?: FlowbiteHeadingLevel;
+  as?: HeadingLevel;
   theme?: DeepPartial<FlowbiteAccordionTitleTheme>;
 }
 

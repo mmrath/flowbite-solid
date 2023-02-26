@@ -2,7 +2,7 @@ import { render, screen } from "@solidjs/testing-library";
 import userEvent from "@testing-library/user-event";
 import { HiSolidCloudDownload as HiCloudDownload } from "solid-icons/hi";
 import { describe, expect, it } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import { ListGroup } from "./ListGroup";
 import { createSignal, JSX } from "solid-js";
 
@@ -61,9 +61,9 @@ describe("Components / List group", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestListGroup />
-        </Flowbite>
+        </Theme>
       )),
         expect(listGroup()).toHaveClass("text-gray-100");
     });
@@ -87,9 +87,9 @@ describe("Components / List group", () => {
       };
 
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestListGroup />
-        </Flowbite>
+        </Theme>
       ));
 
       icons().forEach(icon => expect(icon).toHaveClass("text-gray-300"));

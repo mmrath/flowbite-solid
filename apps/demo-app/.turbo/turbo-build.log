@@ -14,15 +14,15 @@ Inspect report generated at /Users/murali/projects/flowbite-solid/apps/demo-app/
 rendering chunks...
 dist/public/manifest.json                      1.64 KiB
 dist/public/ssr-manifest.json                  6.38 KiB
-dist/public/assets/_...404_.07222c1b.js        0.80 KiB / gzip: 0.46 KiB
-dist/public/assets/about.07e8ae07.js           0.78 KiB / gzip: 0.48 KiB
-dist/public/assets/Counter.b0c2303b.js         0.44 KiB / gzip: 0.32 KiB
-dist/public/assets/index.a8edad79.js           0.82 KiB / gzip: 0.50 KiB
-dist/public/assets/accordion.12039940.js       4.12 KiB / gzip: 1.50 KiB
-dist/public/assets/footer.a140c4e8.js          10.52 KiB / gzip: 3.49 KiB
+dist/public/assets/_...404_.ad7fd6d7.js        0.80 KiB / gzip: 0.46 KiB
+dist/public/assets/about.a1865c93.js           0.78 KiB / gzip: 0.48 KiB
+dist/public/assets/Counter.b873c436.js         0.44 KiB / gzip: 0.32 KiB
+dist/public/assets/index.1b43bc73.js           0.82 KiB / gzip: 0.50 KiB
+dist/public/assets/accordion.80e2cf44.js       4.12 KiB / gzip: 1.50 KiB
+dist/public/assets/footer.83a994f1.js          10.52 KiB / gzip: 3.49 KiB
 dist/public/assets/entry-client.6d01ecff.css   15.70 KiB / gzip: 3.69 KiB
-dist/public/assets/entry-client.d278c814.js    92.84 KiB / gzip: 27.03 KiB
-solid-start client built in: 3.596s
+dist/public/assets/entry-client.f0bd21cb.js    92.84 KiB / gzip: 27.04 KiB
+solid-start client built in: 3.533s
 
 solid-start building server...
 vite v3.2.5 building SSR bundle for production...
@@ -31,6 +31,6 @@ transforming...
 Inspect report generated at /Users/murali/projects/flowbite-solid/apps/demo-app/.solid/inspect
 rendering chunks...
 .solid/server/manifest.json     0.18 KiB
-.solid/server/entry-server.js   153.33 KiB
-solid-start server built in: 1.449s
+.solid/server/entry-server.js   153.32 KiB
+solid-start server built in: 1.451s
 

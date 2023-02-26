@@ -1,3 +1,3 @@
 export type { FlowbiteTheme } from "./FlowbiteTheme";
-export { Flowbite } from "./Flowbite";
+export { Theme } from "./Theme";
 export * from "./ThemeContext";

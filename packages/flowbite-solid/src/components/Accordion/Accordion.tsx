@@ -1,9 +1,9 @@
 import classNames from "clsx";
 import { DeepPartial, IconComponent } from "../index";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import { FlowbiteBoolean } from "../Flowbite/FlowbiteTheme";
+import { OnOffStyles } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite/ThemeContext";
-import { AccordionContent, FlowbiteAccordionComponentTheme } from "./AccordionContent";
+import { AccordionContent, AccordionComponentTheme } from "./AccordionContent";
 import { AccordionPanel } from "./AccordionPanel";
 import { AccordionTitle, FlowbiteAccordionTitleTheme } from "./AccordionTitle";
 import {
@@ -18,15 +18,15 @@ import {
 import AccordionContext, { AccordionEventKey, AccordionSelectCallback } from "./AccordionContext";
 import { createControlledProp } from "../../helpers/createControlledProp";
 
-export interface FlowbiteAccordionTheme {
-  root: FlowbiteAccordionRootTheme;
-  content: FlowbiteAccordionComponentTheme;
+export interface AccordionTheme {
+  root: AccordionRootTheme;
+  content: AccordionComponentTheme;
   title: FlowbiteAccordionTitleTheme;
 }
 
-export interface FlowbiteAccordionRootTheme {
+export interface AccordionRootTheme {
   base: string;
-  flush: FlowbiteBoolean;
+  flush: OnOffStyles;
 }
 
 export interface AccordionProps extends ParentProps<Omit<ComponentProps<"div">, "onSelect">> {
@@ -37,7 +37,7 @@ export interface AccordionProps extends ParentProps<Omit<ComponentProps<"div">, 
   flush?: boolean;
   collapseAll?: boolean;
   onSelect?: AccordionSelectCallback;
-  theme?: DeepPartial<FlowbiteAccordionRootTheme>;
+  theme?: DeepPartial<AccordionRootTheme>;
 }
 
 const defaultProps: Partial<AccordionProps> = {

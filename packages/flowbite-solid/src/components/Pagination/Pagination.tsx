@@ -18,7 +18,7 @@ import {
 } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbitePaginationTheme {
+export interface PaginationTheme {
   base: string;
   layout: {
     table: {

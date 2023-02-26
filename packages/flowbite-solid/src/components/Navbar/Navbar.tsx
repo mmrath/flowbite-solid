@@ -1,13 +1,13 @@
 import classNames from "clsx";
 import { DeepPartial } from "..";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import { FlowbiteBoolean } from "../Flowbite/FlowbiteTheme";
+import { OnOffStyles } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
-import { FlowbiteNavbarBrandTheme, NavbarBrand } from "./NavbarBrand";
-import { FlowbiteNavbarCollapseTheme, NavbarCollapse } from "./NavbarCollapse";
+import { NavbarBrandTheme, NavbarBrand } from "./NavbarBrand";
+import { NavbarCollapseTheme, NavbarCollapse } from "./NavbarCollapse";
 import { NavbarContext } from "./NavbarContext";
-import { FlowbiteNavbarLinkTheme, NavbarLink } from "./NavbarLink";
-import { FlowbiteNavbarToggleTheme, NavbarToggle } from "./NavbarToggle";
+import { NavbarLinkTheme, NavbarLink } from "./NavbarLink";
+import { NavbarToggleTheme, NavbarToggle } from "./NavbarToggle";
 import {
   Component,
   ComponentProps,
@@ -18,21 +18,21 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteNavbarTheme {
-  root: FlowbiteNavbarRootTheme;
-  brand: FlowbiteNavbarBrandTheme;
-  collapse: FlowbiteNavbarCollapseTheme;
-  link: FlowbiteNavbarLinkTheme;
-  toggle: FlowbiteNavbarToggleTheme;
+export interface NavbarTheme {
+  root: NavbarRootTheme;
+  brand: NavbarBrandTheme;
+  collapse: NavbarCollapseTheme;
+  link: NavbarLinkTheme;
+  toggle: NavbarToggleTheme;
 }
 
-export interface FlowbiteNavbarRootTheme {
+export interface NavbarRootTheme {
   base: string;
-  rounded: FlowbiteBoolean;
-  bordered: FlowbiteBoolean;
+  rounded: OnOffStyles;
+  bordered: OnOffStyles;
   inner: {
     base: string;
-    fluid: FlowbiteBoolean;
+    fluid: OnOffStyles;
   };
 }
 
@@ -41,7 +41,7 @@ export interface NavbarComponentProps extends ParentProps<ComponentProps<"nav">>
   fluid?: boolean;
   rounded?: boolean;
   border?: boolean;
-  theme?: DeepPartial<FlowbiteNavbarRootTheme>;
+  theme?: DeepPartial<NavbarRootTheme>;
 }
 
 const NavbarComponent: Component<NavbarComponentProps> = p => {

@@ -1,7 +1,7 @@
 import { render, screen } from "@solidjs/testing-library";
 import { HiSolidHome as HiHome } from "solid-icons/hi";
 import { describe, expect, it } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import { Breadcrumb } from "./Breadcrumb";
 
 describe("Components / Breadcrumb", () => {
@@ -50,9 +50,9 @@ describe("Components / Breadcrumb", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestBreadcrumb />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(breadcrumbList()).toHaveClass("gap-6");
@@ -73,9 +73,9 @@ describe("Components / Breadcrumb", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestBreadcrumb />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(items()[0]).toHaveClass("justify-center");

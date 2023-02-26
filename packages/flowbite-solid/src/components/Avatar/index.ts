@@ -1,6 +1,6 @@
 export * from "./Avatar";
-export type { AvatarGroupProps, FlowbiteAvatarGroupTheme } from "./AvatarGroup";
+export type { AvatarGroupProps, AvatarGroupTheme } from "./AvatarGroup";
 export type {
   AvatarGroupCounterProps,
-  FlowbiteAvatarGroupCounterTheme,
+  AvatarGroupCounterTheme,
 } from "./AvatarGroupCounter";

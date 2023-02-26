@@ -11,17 +11,17 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteAvatarGroupCounterTheme {
-  root: FlowbiteAvatarGroupCounterRootTheme;
+export interface AvatarGroupCounterTheme {
+  root: AvatarGroupCounterRootTheme;
 }
 
-export interface FlowbiteAvatarGroupCounterRootTheme {
+export interface AvatarGroupCounterRootTheme {
   base: string;
 }
 
 export interface AvatarGroupCounterProps extends ParentProps<ComponentProps<"a">> {
   total?: number;
-  theme?: DeepPartial<FlowbiteAvatarGroupCounterRootTheme>;
+  theme?: DeepPartial<AvatarGroupCounterRootTheme>;
 }
 
 const AvatarGroupCounter: Component<AvatarGroupCounterProps> = p => {

@@ -1,10 +1,10 @@
 import classNames from "clsx";
 import type {
-  FlowbiteBoolean,
-  FlowbiteColors,
-  FlowbiteGradientColors,
-  FlowbiteGradientDuoToneColors,
-  FlowbiteSizes,
+  OnOffStyles,
+  ThemeColors,
+  GradientColors,
+  GradientDuoToneColors,
+  Sizes,
 } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite/ThemeContext";
 import type { PositionInButtonGroup, PositionInButtonGroupKeys } from "./ButtonGroup";
@@ -12,7 +12,7 @@ import ButtonGroup from "./ButtonGroup";
 import { ComponentProps, createMemo, JSX, mergeProps, splitProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteButtonTheme {
+export interface ButtonTheme {
   base: string;
   fullSized: string;
   color: ButtonColors;
@@ -25,35 +25,35 @@ export interface FlowbiteButtonTheme {
     outline: string;
   };
   label: string;
-  outline: FlowbiteBoolean & {
+  outline: OnOffStyles & {
     color: ButtonOutlineColors;
-    pill: FlowbiteBoolean;
+    pill: OnOffStyles;
   };
-  pill: FlowbiteBoolean;
+  pill: OnOffStyles;
   size: ButtonSizes;
 }
 
 export interface ButtonColors
   extends Pick<
-    FlowbiteColors,
+    ThemeColors,
     "dark" | "failure" | "gray" | "info" | "light" | "purple" | "success" | "warning"
   > {
   [key: string]: string;
 }
 
-export interface ButtonGradientColors extends FlowbiteGradientColors {
+export interface ButtonGradientColors extends GradientColors {
   [key: string]: string;
 }
 
-export interface ButtonGradientDuoToneColors extends FlowbiteGradientDuoToneColors {
+export interface ButtonGradientDuoToneColors extends GradientDuoToneColors {
   [key: string]: string;
 }
 
-export interface ButtonOutlineColors extends Pick<FlowbiteColors, "gray"> {
+export interface ButtonOutlineColors extends Pick<ThemeColors, "gray"> {
   [key: string]: string;
 }
 
-export interface ButtonSizes extends Pick<FlowbiteSizes, "xs" | "sm" | "lg" | "xl"> {
+export interface ButtonSizes extends Pick<Sizes, "xs" | "sm" | "lg" | "xl"> {
   [key: string]: string;
 }
 

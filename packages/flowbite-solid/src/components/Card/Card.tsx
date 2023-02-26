@@ -3,12 +3,12 @@ import { Component, ComponentProps, JSX, ParentProps, splitProps } from "solid-j
 import { Dynamic } from "solid-js/web";
 import clsx from "clsx";
 
-export interface FlowbiteCardTheme {
-  root: FlowbiteCardRootTheme;
-  img: FlowbiteCardImageTheme;
+export interface CardTheme {
+  root: CardRootTheme;
+  img: CardImageTheme;
 }
 
-export interface FlowbiteCardRootTheme {
+export interface CardRootTheme {
   base: string;
   children: string;
   horizontal: {
@@ -20,7 +20,7 @@ export interface FlowbiteCardRootTheme {
   body: string;
 }
 
-export interface FlowbiteCardImageTheme {
+export interface CardImageTheme {
   base: string;
   horizontal: {
     off: string;

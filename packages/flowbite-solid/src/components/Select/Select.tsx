@@ -1,12 +1,12 @@
 import classNames from "clsx";
-import type { FlowbiteBoolean, FlowbiteColors, FlowbiteSizes } from "../Flowbite/FlowbiteTheme";
+import type { OnOffStyles, ThemeColors, Sizes } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import { HelperText } from "../HelperText";
 import { Component, ComponentProps, createMemo, JSX, mergeProps, splitProps } from "solid-js";
 import { IconComponent } from "../types";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteSelectTheme {
+export interface SelectTheme {
   base: string;
   addon: string;
   field: {
@@ -17,9 +17,9 @@ export interface FlowbiteSelectTheme {
     };
     select: {
       base: string;
-      withIcon: FlowbiteBoolean;
-      withAddon: FlowbiteBoolean;
-      withShadow: FlowbiteBoolean;
+      withIcon: OnOffStyles;
+      withAddon: OnOffStyles;
+      withShadow: OnOffStyles;
       sizes: SelectSizes;
       colors: SelectColors;
     };
@@ -27,11 +27,11 @@ export interface FlowbiteSelectTheme {
 }
 
 export interface SelectColors
-  extends Pick<FlowbiteColors, "gray" | "info" | "failure" | "warning" | "success"> {
+  extends Pick<ThemeColors, "gray" | "info" | "failure" | "warning" | "success"> {
   [key: string]: string;
 }
 
-export interface SelectSizes extends Pick<FlowbiteSizes, "sm" | "md" | "lg"> {
+export interface SelectSizes extends Pick<Sizes, "sm" | "md" | "lg"> {
   [key: string]: string;
 }
 

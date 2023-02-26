@@ -25,4 +25,4 @@ Example config for your `package.json`:
   }
 }
 
-[32mcreated [1mdist/cjs, dist/esm[22m in [1m7.7s[22m[39m
+[32mcreated [1mdist/cjs, dist/esm[22m in [1m7.3s[22m[39m

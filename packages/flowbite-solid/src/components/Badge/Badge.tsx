@@ -1,7 +1,7 @@
 import classNames from "clsx";
 import { DeepPartial, IconComponent } from "..";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import type { FlowbiteColors, FlowbiteSizes } from "../Flowbite/FlowbiteTheme";
+import type { ThemeColors, Sizes } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import {
   Component,
@@ -15,19 +15,19 @@ import {
 } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteBadgeTheme {
-  root: FlowbiteBadgeRootTheme;
-  icon: FlowbiteBadgeIconTheme;
+export interface BadgeTheme {
+  root: BadgeRootTheme;
+  icon: BadgeIconTheme;
 }
 
-export interface FlowbiteBadgeRootTheme {
+export interface BadgeRootTheme {
   base: string;
   color: BadgeColors;
   href: string;
   size: BadgeSizes;
 }
 
-export interface FlowbiteBadgeIconTheme {
+export interface BadgeIconTheme {
   off: string;
   on: string;
   size: BadgeSizes;
@@ -35,13 +35,13 @@ export interface FlowbiteBadgeIconTheme {
 
 export interface BadgeColors
   extends Pick<
-    FlowbiteColors,
+    ThemeColors,
     "failure" | "gray" | "indigo" | "info" | "pink" | "purple" | "success"
   > {
   [key: string]: string;
 }
 
-export interface BadgeSizes extends Pick<FlowbiteSizes, "xs" | "sm"> {
+export interface BadgeSizes extends Pick<Sizes, "xs" | "sm"> {
   [key: string]: string;
 }
 
@@ -50,7 +50,7 @@ export interface BadgeProps extends ParentProps<Omit<ComponentProps<"span">, "co
   href?: string;
   icon?: IconComponent;
   size?: keyof BadgeSizes;
-  theme?: DeepPartial<FlowbiteBadgeTheme>;
+  theme?: DeepPartial<BadgeTheme>;
 }
 
 export const Badge: Component<BadgeProps> = (p): JSX.Element => {

@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import { Button } from "./index";
 import defaultTheme from "../../theme/default";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 
 describe("Components / Button group", () => {
   describe("A11y", () => {
@@ -99,13 +99,13 @@ describe("Components / Button group", () => {
       };
 
       const { getByRole } = render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button.Group>
             <Button>One</Button>
             <Button>Two</Button>
             <Button>Three</Button>
           </Button.Group>
-        </Flowbite>
+        </Theme>
       ));
       const group = getByRole("group");
       expect(group).toHaveClass("text-gray-400");
@@ -119,13 +119,13 @@ describe("Components / Button group", () => {
       };
 
       const { getByRole } = render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Button.Group>
             <Button>One</Button>
             <Button>Two</Button>
             <Button>Three</Button>
           </Button.Group>
-        </Flowbite>
+        </Theme>
       ));
       const group = getByRole("group");
       expect(group).toHaveClass("text-gray-400");

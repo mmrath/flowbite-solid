@@ -1,6 +1,6 @@
 export * from "./Button";
 export type {
   ButtonGroupProps,
-  FlowbiteButtonGroupTheme,
+  ButtonGroupTheme,
   PositionInButtonGroup,
 } from "./ButtonGroup";

@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@solidjs/testing-library";
 import userEvent from "@testing-library/user-event";
 import { HiOutlineArrowCircleDown } from "solid-icons/hi";
 import { describe, expect, it } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import type { AccordionProps } from "./Accordion";
 import { Accordion } from "./Accordion";
 import { Component } from "solid-js";
@@ -120,9 +120,9 @@ describe("Components / Accordion", () => {
         };
 
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <TestAccordion />
-          </Flowbite>
+          </Theme>
         ));
 
         expect(accordion()).toHaveClass("text-4xl");
@@ -141,10 +141,10 @@ describe("Components / Accordion", () => {
         };
 
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <TestAccordion />
             <TestAccordion flush />
-          </Flowbite>
+          </Theme>
         ));
 
         const accordions = screen.getAllByTestId("flowbite-accordion");
@@ -167,9 +167,9 @@ describe("Components / Accordion", () => {
         };
 
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <TestAccordion />
-          </Flowbite>
+          </Theme>
         ));
 
         content().forEach(content => {
@@ -204,10 +204,10 @@ describe("Components / Accordion", () => {
         };
 
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <TestAccordion alwaysOpen defaultActiveKey="0" />
             <TestAccordion alwaysOpen defaultActiveKey="0" flush />
-          </Flowbite>
+          </Theme>
         ));
 
         const normalTitles = [titles()[0], titles()[1]];

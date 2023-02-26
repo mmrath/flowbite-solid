@@ -14,7 +14,7 @@ import {
   Title,
 } from "solid-start";
 import "./root.css";
-import {Flowbite} from "flowbite-solid";
+import {Theme} from "flowbite-solid";
 
 export default function Root() {
   const location = useLocation();
@@ -30,11 +30,11 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <Flowbite>
+            <Theme>
               <Routes>
                 <FileRoutes />
               </Routes>
-            </Flowbite>
+            </Theme>
           </ErrorBoundary>
         </Suspense>
         <Scripts />

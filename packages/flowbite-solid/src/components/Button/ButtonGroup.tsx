@@ -4,7 +4,7 @@ import type { ButtonProps } from "./Button";
 import { useTheme } from "../Flowbite";
 import { ComponentProps, JSX, ParentProps, splitProps } from "solid-js";
 
-export interface FlowbiteButtonGroupTheme {
+export interface ButtonGroupTheme {
   base: string;
   position: PositionInButtonGroup;
 }

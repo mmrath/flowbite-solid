@@ -1,7 +1,7 @@
 import classNames from "clsx";
 import { DeepPartial } from "..";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import { FlowbiteBoolean, FlowbiteColors } from "../Flowbite/FlowbiteTheme";
+import { OnOffStyles, ThemeColors } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import {
   Component,
@@ -13,13 +13,13 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteToggleSwitchTheme {
+export interface ToggleSwitchTheme {
   base: string;
-  active: FlowbiteBoolean;
+  active: OnOffStyles;
   toggle: {
     base: string;
-    checked: FlowbiteBoolean & {
-      color: FlowbiteColors;
+    checked: OnOffStyles & {
+      color: ThemeColors;
     };
   };
   label: string;
@@ -28,9 +28,9 @@ export interface FlowbiteToggleSwitchTheme {
 export type ToggleSwitchProps = Omit<ComponentProps<"button">, "onChange"> & {
   checked: boolean;
   label: string;
-  color?: FlowbiteColors;
+  color?: ThemeColors;
   onChange: (checked: boolean) => void;
-  theme?: DeepPartial<FlowbiteToggleSwitchTheme>;
+  theme?: DeepPartial<ToggleSwitchTheme>;
 };
 
 export const ToggleSwitch: Component<ToggleSwitchProps> = p => {

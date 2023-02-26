@@ -1,7 +1,7 @@
 import classNames from "clsx";
 import { DeepPartial } from "..";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import { FlowbiteBoolean } from "../Flowbite/FlowbiteTheme";
+import { OnOffStyles } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite/ThemeContext";
 import { useNavbarContext } from "./NavbarContext";
 import {
@@ -14,14 +14,14 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteNavbarCollapseTheme {
+export interface NavbarCollapseTheme {
   base: string;
   list: string;
-  hidden: FlowbiteBoolean;
+  hidden: OnOffStyles;
 }
 
 export interface NavbarCollapseProps extends ParentProps<ComponentProps<"div">> {
-  theme?: DeepPartial<FlowbiteNavbarCollapseTheme>;
+  theme?: DeepPartial<NavbarCollapseTheme>;
 }
 
 export const NavbarCollapse: Component<NavbarCollapseProps> = (p): JSX.Element => {

@@ -1,15 +1,15 @@
 import classNames from "clsx";
-import { FlowbiteBoolean } from "../Flowbite/FlowbiteTheme";
+import { OnOffStyles } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import { ListGroupItem } from "./ListGroupItem";
 import { Component, ComponentProps, createMemo, JSX, ParentProps, splitProps } from "solid-js";
 
-export interface FlowbiteListGroupTheme {
+export interface ListGroupTheme {
   base: string;
   item: {
-    active: FlowbiteBoolean;
+    active: OnOffStyles;
     base: string;
-    href: FlowbiteBoolean;
+    href: OnOffStyles;
     icon: string;
   };
 }

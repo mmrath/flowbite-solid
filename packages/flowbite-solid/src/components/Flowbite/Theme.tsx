@@ -12,12 +12,12 @@ export interface ThemeProps {
   usePreferences?: boolean;
 }
 
-interface FlowbiteProps extends JSX.HTMLAttributes<HTMLDivElement> {
+interface ThemeComponentProps extends JSX.HTMLAttributes<HTMLDivElement> {
   children: JSX.Element;
   theme?: ThemeProps;
 }
 
-export const Flowbite = (p: FlowbiteProps) => {
+export const Theme = (p: ThemeComponentProps) => {
   const [local, props] = splitProps(
     mergeProps({ theme: { theme: {}, usePreferences: true, dark: undefined } }, p),
     ["theme"]

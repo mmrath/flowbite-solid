@@ -1,84 +1,84 @@
 import { DeepPartial } from "../types";
-import { FlowbiteButtonGroupTheme, FlowbiteButtonTheme } from "../Button";
-import { FlowbiteCardTheme } from "../Card";
-import { FlowbiteTextInputTheme } from "../TextInput";
-import { FlowbiteHelperTextTheme } from "../HelperText";
-import { FlowbiteAccordionTheme } from "../Accordion";
-import { FlowbiteAlertTheme } from "../Alert";
-import { FlowbiteBadgeTheme } from "../Badge";
-import { FlowbiteBreadcrumbTheme } from "../Breadcrumb";
-import { FlowbiteCheckboxTheme } from "../Checkbox";
+import { ButtonGroupTheme, ButtonTheme } from "../Button";
+import { CardTheme } from "../Card";
+import { TextInputTheme } from "../TextInput";
+import { HelperTextTheme } from "../HelperText";
+import { AccordionTheme } from "../Accordion";
+import { AlertTheme } from "../Alert";
+import { BadgeTheme } from "../Badge";
+import { BreadcrumbTheme } from "../Breadcrumb";
+import { CheckboxTheme } from "../Checkbox";
 import {
-  FlowbiteAvatarGroupCounterTheme,
-  FlowbiteAvatarGroupTheme,
-  FlowbiteAvatarTheme,
+  AvatarGroupCounterTheme,
+  AvatarGroupTheme,
+  AvatarTheme,
 } from "../Avatar";
-import { FlowbiteLabelTheme } from "../Label";
-import { FlowbiteFileInputTheme } from "../FileInput";
-import { FlowbiteRadioTheme } from "../Radio";
-import { FlowbiteSelectTheme } from "../Select";
-import { FlowbiteTextareaTheme } from "../Textarea";
-import { FlowbiteToggleSwitchTheme } from "../ToggleSwitch";
-import { FlowbiteToastTheme } from "../Toast";
-import { FlowbiteListGroupTheme } from "../ListGroup";
-import { FlowbiteFooterTheme } from "../Footer";
-import { FlowbiteNavbarTheme } from "../Navbar";
-import { FlowbitePaginationTheme } from "../Pagination";
+import { LabelTheme } from "../Label";
+import { FileInputTheme } from "../FileInput";
+import { RadioTheme } from "../Radio";
+import { SelectTheme } from "../Select";
+import { TextareaTheme } from "../Textarea";
+import { ToggleSwitchTheme } from "../ToggleSwitch";
+import { ToastTheme } from "../Toast";
+import { ListGroupTheme } from "../ListGroup";
+import { FooterTheme } from "../Footer";
+import { NavbarTheme } from "../Navbar";
+import { PaginationTheme } from "../Pagination";
 
 export type CustomFlowbiteTheme = DeepPartial<FlowbiteTheme>;
 
 export interface FlowbiteTheme extends Record<string, unknown> {
-  accordion: FlowbiteAccordionTheme;
-  alert: FlowbiteAlertTheme;
-  avatar: FlowbiteAvatarTheme;
-  avatarGroupCounter: FlowbiteAvatarGroupCounterTheme;
-  avatarGroup: FlowbiteAvatarGroupTheme;
-  badge: FlowbiteBadgeTheme;
-  breadcrumb: FlowbiteBreadcrumbTheme;
-  button: FlowbiteButtonTheme;
-  buttonGroup: FlowbiteButtonGroupTheme;
-  card: FlowbiteCardTheme;
+  accordion: AccordionTheme;
+  alert: AlertTheme;
+  avatar: AvatarTheme;
+  avatarGroupCounter: AvatarGroupCounterTheme;
+  avatarGroup: AvatarGroupTheme;
+  badge: BadgeTheme;
+  breadcrumb: BreadcrumbTheme;
+  button: ButtonTheme;
+  buttonGroup: ButtonGroupTheme;
+  card: CardTheme;
   // carousel: FlowbiteCarouselTheme;
   // darkThemeToggle: FlowbiteDarkThemeToggleTheme;
-  footer: FlowbiteFooterTheme;
-  listGroup: FlowbiteListGroupTheme;
+  footer: FooterTheme;
+  listGroup: ListGroupTheme;
   // modal: FlowbiteModalTheme;
-  navbar: FlowbiteNavbarTheme;
+  navbar: NavbarTheme;
   // rating: FlowbiteRatingTheme;
-  pagination: FlowbitePaginationTheme;
+  pagination: PaginationTheme;
   // sidebar: FlowbiteSidebarTheme;
   // progress: FlowbiteProgressTheme;
   // spinner: FlowbiteSpinnerTheme;
   // tab: FlowbiteTabTheme;
-  toast: FlowbiteToastTheme;
+  toast: ToastTheme;
   // tooltip: FlowbiteTooltipTheme;
   // dropdown: FlowbiteDropdownTheme;
-  checkbox: FlowbiteCheckboxTheme;
-  fileInput: FlowbiteFileInputTheme;
-  label: FlowbiteLabelTheme;
-  radio: FlowbiteRadioTheme;
-  select: FlowbiteSelectTheme;
-  textInput: FlowbiteTextInputTheme;
-  textarea: FlowbiteTextareaTheme;
-  toggleSwitch: FlowbiteToggleSwitchTheme;
-  helperText: FlowbiteHelperTextTheme;
+  checkbox: CheckboxTheme;
+  fileInput: FileInputTheme;
+  label: LabelTheme;
+  radio: RadioTheme;
+  select: SelectTheme;
+  textInput: TextInputTheme;
+  textarea: TextareaTheme;
+  toggleSwitch: ToggleSwitchTheme;
+  helperText: HelperTextTheme;
   // table: FlowbiteTableTheme;
   // timeline: FlowbiteTimelineTheme;
 }
 
-export interface FlowbiteBoolean {
+export interface OnOffStyles {
   off: string;
   on: string;
 }
 
-export interface FlowbiteStateColors {
+export interface StateColors {
   info: string;
   failure: string;
   success: string;
   warning: string;
 }
 
-export interface FlowbiteColors extends FlowbiteStateColors {
+export interface ThemeColors extends StateColors {
   [key: string]: string;
   blue: string;
   cyan: string;
@@ -95,7 +95,7 @@ export interface FlowbiteColors extends FlowbiteStateColors {
   yellow: string;
 }
 
-export interface FlowbiteGradientColors extends Omit<FlowbiteStateColors, "warning"> {
+export interface GradientColors extends Omit<StateColors, "warning"> {
   [key: string]: string;
   cyan: string;
   lime: string;
@@ -104,7 +104,7 @@ export interface FlowbiteGradientColors extends Omit<FlowbiteStateColors, "warni
   teal: string;
 }
 
-export interface FlowbiteGradientDuoToneColors {
+export interface GradientDuoToneColors {
   cyanToBlue: string;
   greenToBlue: string;
   pinkToOrange: string;
@@ -114,9 +114,9 @@ export interface FlowbiteGradientDuoToneColors {
   tealToLime: string;
 }
 
-export type FlowbiteHeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export interface FlowbitePositions {
+export interface Positions {
   "bottom-left": string;
   "bottom-right": string;
   "bottom-center": string;
@@ -128,7 +128,7 @@ export interface FlowbitePositions {
   "center-right": string;
 }
 
-export interface FlowbiteSizes {
+export interface Sizes {
   xs: string;
   sm: string;
   md: string;
@@ -140,8 +140,4 @@ export interface FlowbiteSizes {
   "5xl": string;
   "6xl": string;
   "7xl": string;
-}
-
-export interface FlowbiteContentPositions {
-  center: string;
 }

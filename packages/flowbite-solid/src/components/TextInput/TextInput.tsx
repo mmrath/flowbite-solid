@@ -1,13 +1,13 @@
 import classNames from "clsx";
 import { DeepPartial } from "../index";
 import { mergeDeep } from "../../helpers/mergeDeep";
-import type { FlowbiteBoolean, FlowbiteColors, FlowbiteSizes } from "../Flowbite/FlowbiteTheme";
+import type { OnOffStyles, ThemeColors, Sizes } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import { HelperText } from "../HelperText";
 import { Component, ComponentProps, createMemo, JSX, mergeProps, splitProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-export interface FlowbiteTextInputTheme {
+export interface TextInputTheme {
   base: string;
   addon: string;
   field: {
@@ -24,20 +24,20 @@ export interface FlowbiteTextInputTheme {
       base: string;
       sizes: TextInputSizes;
       colors: TextInputColors;
-      withIcon: FlowbiteBoolean;
-      withRightIcon: FlowbiteBoolean;
-      withAddon: FlowbiteBoolean;
-      withShadow: FlowbiteBoolean;
+      withIcon: OnOffStyles;
+      withRightIcon: OnOffStyles;
+      withAddon: OnOffStyles;
+      withShadow: OnOffStyles;
     };
   };
 }
 
 export interface TextInputColors
-  extends Pick<FlowbiteColors, "gray" | "info" | "failure" | "warning" | "success"> {
+  extends Pick<ThemeColors, "gray" | "info" | "failure" | "warning" | "success"> {
   [key: string]: string;
 }
 
-export interface TextInputSizes extends Pick<FlowbiteSizes, "sm" | "md" | "lg"> {
+export interface TextInputSizes extends Pick<Sizes, "sm" | "md" | "lg"> {
   [key: string]: string;
 }
 
@@ -49,7 +49,7 @@ export interface TextInputProps extends Omit<ComponentProps<"input">, "color"> {
   icon?: Component<ComponentProps<"svg">>;
   rightIcon?: Component<JSX.SvgSVGAttributes<SVGSVGElement>>;
   color?: keyof TextInputColors;
-  theme?: DeepPartial<FlowbiteTextInputTheme>;
+  theme?: DeepPartial<TextInputTheme>;
 }
 
 const defaultProps = {

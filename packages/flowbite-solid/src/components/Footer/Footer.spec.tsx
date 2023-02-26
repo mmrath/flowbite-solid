@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from "@solidjs/testing-library";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "solid-icons/bs";
 import { describe, expect, it } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import { Footer } from "./Footer";
 import { Component } from "solid-js";
 
@@ -67,9 +67,9 @@ describe("Components / Footer", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestFooter />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(footer()).toHaveClass("text-gray-100");
@@ -82,9 +82,9 @@ describe("Components / Footer", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestFooter />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(footer()).toHaveClass("text-gray-100");
@@ -97,9 +97,9 @@ describe("Components / Footer", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <TestFooter />
-        </Flowbite>
+        </Theme>
       ));
 
       expect(footer()).toHaveClass("text-gray-100");
@@ -117,13 +117,13 @@ describe("Components / Footer", () => {
           },
         };
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer>
               <Footer.Brand alt="Flowbite" href="https://flowbite.com" src="">
                 Flowbite
               </Footer.Brand>
             </Footer>
-          </Flowbite>
+          </Theme>
         ));
 
         expect(brand()).toHaveClass("text-gray-100");
@@ -131,13 +131,13 @@ describe("Components / Footer", () => {
 
         cleanup();
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer>
               <Footer.Brand href="/" src="">
                 Flowbite
               </Footer.Brand>
             </Footer>
-          </Flowbite>
+          </Theme>
         ));
 
         expect(screen.getByTestId("flowbite-footer-brand-span")).toHaveClass("text-gray-300");
@@ -156,13 +156,13 @@ describe("Components / Footer", () => {
           },
         };
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer>
               <Footer.Copyright by="Flowbite" year={2022}>
                 Test
               </Footer.Copyright>
             </Footer>
-          </Flowbite>
+          </Theme>
         ));
 
         expect(copyright()).toHaveClass("text-gray-100");
@@ -170,13 +170,13 @@ describe("Components / Footer", () => {
 
         cleanup();
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer>
               <Footer.Copyright by="Flowbite" href="/" year={2022}>
                 Test
               </Footer.Copyright>
             </Footer>
-          </Flowbite>
+          </Theme>
         ));
 
         expect(screen.getByRole("link")).toHaveClass("text-gray-200");
@@ -198,22 +198,22 @@ describe("Components / Footer", () => {
           },
         };
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer>
               <Footer.Icon aria-label="Icon" href="/" icon={BsFacebook} />
             </Footer>
-          </Flowbite>
+          </Theme>
         ));
 
         expect(icon()).toHaveClass("text-gray-800");
 
         cleanup();
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer>
               <Footer.Icon ariaLabel="Icon" icon={BsFacebook} />
             </Footer>
-          </Flowbite>
+          </Theme>
         ));
 
         expect(icon()).toHaveClass("text-gray-900");
@@ -230,9 +230,9 @@ describe("Components / Footer", () => {
           },
         };
         render(() => (
-          <Flowbite theme={{ theme }}>
+          <Theme theme={{ theme }}>
             <Footer.Title title="Flowbite" />
-          </Flowbite>
+          </Theme>
         ));
 
         expect(title()).toHaveClass("text-gray-100");

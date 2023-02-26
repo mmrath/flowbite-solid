@@ -1,17 +1,17 @@
 import classNames from "clsx";
-import type { FlowbiteBoolean, FlowbiteColors } from "../Flowbite/FlowbiteTheme";
+import type { OnOffStyles, ThemeColors } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import { HelperText } from "../HelperText";
 import { Component, ComponentProps, createMemo, JSX, mergeProps, splitProps } from "solid-js";
 
-export interface FlowbiteTextareaTheme {
+export interface TextareaTheme {
   base: string;
   colors: TextareaColors;
-  withShadow: FlowbiteBoolean;
+  withShadow: OnOffStyles;
 }
 
 export interface TextareaColors
-  extends Pick<FlowbiteColors, "gray" | "info" | "failure" | "warning" | "success"> {
+  extends Pick<ThemeColors, "gray" | "info" | "failure" | "warning" | "success"> {
   [key: string]: string;
 }
 

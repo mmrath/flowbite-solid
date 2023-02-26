@@ -5,7 +5,7 @@ import { HelperText } from "../HelperText";
 import type { TextInputColors, TextInputSizes } from "../TextInput";
 import { Component, ComponentProps, createMemo, JSX, mergeProps, splitProps } from "solid-js";
 
-export interface FlowbiteFileInputTheme {
+export interface FileInputTheme {
   base: string;
   field: {
     base: string;
@@ -21,7 +21,7 @@ export interface FileInputProps extends Omit<ComponentProps<"input">, "type" | "
   sizing?: keyof TextInputSizes;
   helperText?: JSX.Element;
   color?: keyof TextInputColors;
-  theme?: DeepPartial<FlowbiteFileInputTheme>;
+  theme?: DeepPartial<FileInputTheme>;
 }
 
 export const FileInput: Component<FileInputProps> = p => {

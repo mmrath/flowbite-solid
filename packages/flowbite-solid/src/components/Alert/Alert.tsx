@@ -1,18 +1,18 @@
 import classNames from "clsx";
 import {DeepPartial, IconComponent} from "..";
 import {mergeDeep} from "../../helpers/mergeDeep";
-import type {FlowbiteColors} from "../Flowbite/FlowbiteTheme";
+import type {ThemeColors} from "../Flowbite/FlowbiteTheme";
 import {useTheme} from "../Flowbite";
 import {Component, ComponentProps, createMemo, JSX, mergeProps, ParentProps} from "solid-js";
 import {Dynamic} from "solid-js/web";
 import {HiSolidX} from "solid-icons/hi";
 
-export interface FlowbiteAlertTheme {
-  root: FlowbiteAlertRootTheme;
-  closeButton: FlowbiteAlertCloseButtonTheme;
+export interface AlertTheme {
+  root: AlertRootTheme;
+  closeButton: AlertCloseButtonTheme;
 }
 
-export interface FlowbiteAlertRootTheme {
+export interface AlertRootTheme {
   base: string;
   borderAccent: string;
   wrapper: string;
@@ -21,14 +21,14 @@ export interface FlowbiteAlertRootTheme {
   rounded: string;
 }
 
-export interface FlowbiteAlertCloseButtonTheme {
+export interface AlertCloseButtonTheme {
   base: string;
   icon: string;
   color: AlertColors;
 }
 
 export interface AlertColors
-  extends Pick<FlowbiteColors, "failure" | "gray" | "info" | "success" | "warning"> {
+  extends Pick<ThemeColors, "failure" | "gray" | "info" | "success" | "warning"> {
   [key: string]: string;
 }
 
@@ -39,7 +39,7 @@ export interface AlertProps extends ParentProps<Omit<ComponentProps<"div">, "col
   onDismiss?: boolean | (() => void);
   rounded?: boolean;
   withBorderAccent?: boolean;
-  theme?: DeepPartial<FlowbiteAlertTheme>;
+  theme?: DeepPartial<AlertTheme>;
 }
 
 export const Alert: Component<AlertProps> = p => {

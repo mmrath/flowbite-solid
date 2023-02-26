@@ -13,7 +13,7 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteToastTheme {
+export interface ToastTheme {
   base: string;
   closed: string;
   removed: string;

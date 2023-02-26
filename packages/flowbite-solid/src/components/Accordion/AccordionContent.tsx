@@ -14,12 +14,12 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteAccordionComponentTheme {
+export interface AccordionComponentTheme {
   base: string;
 }
 
 export interface AccordionContentProps extends ParentProps<ComponentProps<"div">> {
-  theme?: DeepPartial<FlowbiteAccordionComponentTheme>;
+  theme?: DeepPartial<AccordionComponentTheme>;
 }
 
 export const AccordionContent: Component<AccordionContentProps> = (

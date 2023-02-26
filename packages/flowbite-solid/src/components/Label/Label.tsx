@@ -1,5 +1,5 @@
 import classNames from "clsx";
-import type { FlowbiteStateColors } from "../Flowbite/FlowbiteTheme";
+import type { StateColors } from "../Flowbite/FlowbiteTheme";
 import { useTheme } from "../Flowbite";
 import {
   Component,
@@ -10,13 +10,13 @@ import {
   splitProps,
 } from "solid-js";
 
-export interface FlowbiteLabelTheme {
+export interface LabelTheme {
   base: string;
   colors: LabelColors;
   disabled: string;
 }
 
-export interface LabelColors extends FlowbiteStateColors {
+export interface LabelColors extends StateColors {
   [key: string]: string;
   default: string;
 }

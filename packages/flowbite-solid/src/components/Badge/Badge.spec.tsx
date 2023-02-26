@@ -1,7 +1,7 @@
 import { render, screen } from "@solidjs/testing-library";
 import { HiSolidCheck } from "solid-icons/hi";
 import { describe, expect, it } from "vitest";
-import { Flowbite } from "../Flowbite";
+import { Theme } from "../Flowbite";
 import { Badge } from "./Badge";
 
 describe("Components / Badge", () => {
@@ -31,11 +31,11 @@ describe("Components / Badge", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Badge color="primary" href="/" icon={HiSolidCheck}>
             A badge
           </Badge>
-        </Flowbite>
+        </Theme>
       ));
 
       expect(badge()).toHaveClass(
@@ -61,10 +61,10 @@ describe("Components / Badge", () => {
         },
       };
       render(() => (
-        <Flowbite theme={{ theme }}>
+        <Theme theme={{ theme }}>
           <Badge size="xxl">A badge</Badge>
           <Badge icon={HiSolidCheck} size="xxl" />
-        </Flowbite>
+        </Theme>
       ));
 
       const badges = screen.getAllByTestId("flowbite-badge");
